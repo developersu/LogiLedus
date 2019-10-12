@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.SVGPath?>
+
+<BorderPane xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="logiled.Controllers.MainController">
+         <top>
+                  <MenuBar BorderPane.alignment="CENTER">
+                    <menus>
+                      <Menu mnemonicParsing="false" text="%menu_File">
+                        <items>
+                          <MenuItem mnemonicParsing="false" text="Close" />
+                        </items>
+                      </Menu>
+                      <Menu mnemonicParsing="false" text="%menu_Edit">
+                        <items>
+                          <MenuItem mnemonicParsing="false" text="Delete" />
+                        </items>
+                      </Menu>
+                      <Menu mnemonicParsing="false" text="%menu_Help">
+                        <items>
+                          <MenuItem fx:id="aboutMenuItem" mnemonicParsing="false" text="%menu_item_about">
+                     <graphic>
+                        <SVGPath content="M11,9H13V7H11M12,20C7.59,20 4,16.41 4,12C4,7.59 7.59,4 12,4C16.41,4 20,7.59 20,12C20,16.41 16.41,20 12,20M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M11,17H13V11H11V17Z" />
+                     </graphic></MenuItem>
+                        </items>
+                      </Menu>
+                    </menus>
+                  </MenuBar>
+         </top>
+         <bottom>
+                  <Pane styleClass="footer" BorderPane.alignment="CENTER">
+                     <children>
+                        <Label fx:id="infoLbl" text="Welcome!">
+                     <padding>
+                        <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
+                     </padding>
+                  </Label>
+                     </children>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+                  </Pane>
+         </bottom>
+         <center>
+            <VBox BorderPane.alignment="CENTER">
+               <children>
+                  <HBox spacing="5.0">
+                     <children>
+                        <Button fx:id="applyBtn" mnemonicParsing="false" text="%btn_apply" />
+                     </children>
+                     <padding>
+                        <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
+                     </padding>
+                  </HBox>
+                         <ScrollPane fitToWidth="true">
+                             <fx:include fx:id="KbrdPane" source="KbrdPane.fxml" VBox.vgrow="ALWAYS" />
+                         </ScrollPane>
+               </children>
+            </VBox>
+         </center>
+  </BorderPane>
