@@ -116,10 +116,10 @@
     -fx-fill: #2c2c2c;
 }
 .tab-pane .tab:selected SVGPath, .tab-pane .tab:selected:hover SVGPath{
-    -fx-fill: #289de8;
+    -fx-fill: #141414;
 }
 .tab-pane .tab:hover SVGPath{
-    -fx-fill: #1c6fa2;
+    -fx-fill: #2b2b2b;
 }
 .tab-pane .tab{
     -fx-background-color: #fefefe;

@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.ColorPicker?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox spacing="5.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="logiled.Controllers.EffectsController">
+      <padding>
+         <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
+      </padding>
+      <children>
+         <HBox alignment="CENTER_LEFT" spacing="5.0">
+            <children>
+               <RadioButton mnemonicParsing="false" prefWidth="210.0" text="%effect_disable">
+               <toggleGroup>
+                  <ToggleGroup fx:id="effectsToggleGrp" />
+               </toggleGroup></RadioButton>
+            </children>
+         </HBox>
+         <Separator prefWidth="200.0" />
+         <HBox alignment="CENTER_LEFT" spacing="5.0">
+            <children>
+               <RadioButton mnemonicParsing="false" prefWidth="210.0" selected="true" text="%effect_constant" toggleGroup="$effectsToggleGrp" />
+               <ColorPicker />
+            </children>
+         </HBox>
+         <Separator prefWidth="200.0" />
+         <HBox alignment="CENTER_LEFT" spacing="5.0">
+            <children>
+               <RadioButton mnemonicParsing="false" prefWidth="210.0" text="%effect_breath" toggleGroup="$effectsToggleGrp" />
+               <ColorPicker />
+            </children>
+         </HBox>
+         <Separator prefWidth="200.0" />
+         <HBox alignment="CENTER_LEFT" spacing="5.0">
+            <children>
+               <RadioButton mnemonicParsing="false" prefWidth="210.0" text="%effect_cirles_on_press" toggleGroup="$effectsToggleGrp" />
+               <Slider blockIncrement="100.0" majorTickUnit="5000.0" max="5000.0" min="1000.0" minorTickCount="1000" prefWidth="300.0" value="1000.0" />
+               <ColorPicker />
+            </children>
+         </HBox>
+         <Separator prefWidth="200.0" />
+         <HBox alignment="CENTER_LEFT" spacing="5.0">
+            <children>
+               <RadioButton mnemonicParsing="false" prefWidth="210.0" text="%effect_cycle" toggleGroup="$effectsToggleGrp" />
+               <Slider majorTickUnit="200.0" max="200.0" min="20.0" minorTickCount="20" prefWidth="300.0" value="20.0" />
+            </children>
+         </HBox>
+         <Separator prefWidth="200.0" />
+         <HBox alignment="CENTER_LEFT" spacing="5.0">
+            <children>
+               <RadioButton mnemonicParsing="false" prefWidth="210.0" text="%effect_wave_horizontal" toggleGroup="$effectsToggleGrp" />
+               <Slider blockIncrement="100.0" majorTickUnit="5000.0" max="5000.0" min="1000.0" minorTickCount="1000" prefWidth="300.0" value="1000.0" />
+            </children>
+         </HBox>
+         <Separator prefWidth="200.0" />
+         <HBox alignment="CENTER_LEFT" spacing="5.0">
+            <children>
+               <RadioButton mnemonicParsing="false" prefWidth="210.0" text="%effect_wave_vertical" toggleGroup="$effectsToggleGrp" />
+               <Slider blockIncrement="100.0" majorTickUnit="5000.0" max="5000.0" min="1000.0" minorTickCount="1000" prefWidth="300.0" value="1000.0" />
+            </children>
+         </HBox>
+         <Separator prefWidth="200.0" />
+         <HBox alignment="CENTER_LEFT" spacing="5.0">
+            <children>
+               <RadioButton mnemonicParsing="false" prefWidth="210.0" text="%effect_wave_center_to_edge" toggleGroup="$effectsToggleGrp" />
+               <Slider blockIncrement="100.0" majorTickUnit="5000.0" max="5000.0" min="1000.0" minorTickCount="1000" prefWidth="300.0" value="1000.0" />
+            </children>
+         </HBox>
+         <Separator prefWidth="200.0" />
+         <HBox alignment="CENTER_LEFT" spacing="5.0">
+            <children>
+               <RadioButton mnemonicParsing="false" prefWidth="210.0" text="%effect_wave_horizontal_reverse" toggleGroup="$effectsToggleGrp" />
+               <Slider blockIncrement="100.0" majorTickUnit="5000.0" max="5000.0" min="1000.0" minorTickCount="1000" prefWidth="300.0" value="1000.0" />
+            </children>
+         </HBox>
+         <Separator prefWidth="200.0" />
+         <HBox alignment="CENTER_LEFT" spacing="5.0">
+            <children>
+               <RadioButton mnemonicParsing="false" prefWidth="210.0" text="%effect_wave_vertical_reverse" toggleGroup="$effectsToggleGrp" />
+               <Slider blockIncrement="100.0" majorTickUnit="5000.0" max="5000.0" min="1000.0" minorTickCount="1000" prefWidth="300.0" value="1000.0" />
+            </children>
+         </HBox>
+         <Separator prefWidth="200.0" />
+         <HBox alignment="CENTER_LEFT" spacing="5.0">
+            <children>
+               <RadioButton mnemonicParsing="false" prefWidth="210.0" text="%effect_wave_edge_to_center" toggleGroup="$effectsToggleGrp" />
+               <Slider blockIncrement="100.0" majorTickUnit="5000.0" max="5000.0" min="1000.0" minorTickCount="1000" prefWidth="300.0" value="1000.0" />
+            </children>
+         </HBox>
+      </children>
+</VBox>

@@ -14,7 +14,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.ResourceBundle;
 
-public class KbrdController implements Initializable {
+public class KeysLedsController implements Initializable {
 
     @FXML
     private Button
@@ -36,19 +36,16 @@ public class KbrdController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        rulesVBox.getChildren().addListener(new ListChangeListener<Node>() {
-            @Override
-            public void onChanged(Change<? extends Node> change) {
-                change.next();                              // Get changes
-                if (change.wasAdded()){                     // If something added, turn on ability to remove such rule
-                    remRuleBtn.setDisable(false);
-                    return;
-                }                                           //  Otherwise, check if we have anything inside the pane
-                if (rulesVBox.getChildren().isEmpty())     // If so, select latest available 'box'
-                    remRuleBtn.setDisable(true);
-                else                                        // If the pane is empty, disable 'Remove' button.
-                    RuleBox.select((RuleBox) rulesVBox.getChildren().get(rulesVBox.getChildren().size()-1));
-            }
+        rulesVBox.getChildren().addListener((ListChangeListener<Node>) change -> {
+            change.next();                              // Get changes
+            if (change.wasAdded()){                     // If something added, turn on ability to remove such rule
+                remRuleBtn.setDisable(false);
+                return;
+            }                                           //  Otherwise, check if we have anything inside the pane
+            if (rulesVBox.getChildren().isEmpty())     // If so, select latest available 'box'
+                remRuleBtn.setDisable(true);
+            else                                        // If the pane is empty, disable 'Remove' button.
+                RuleBox.select((RuleBox) rulesVBox.getChildren().get(rulesVBox.getChildren().size()-1));
         });
 
         addRuleBtn.setOnAction(ActionEvent -> rulesVBox.getChildren().add(new RuleBox()));
@@ -89,6 +86,8 @@ public class KbrdController implements Initializable {
             if (ledSingleRuleSet != null)
                 ledSet.add(ledSingleRuleSet);
         }
+        if (keySet.size() == 0 && ledSet.size() == 0)
+            return null;
         set.put("Key", keySet);
         set.put("Led", ledSet);
         return set;

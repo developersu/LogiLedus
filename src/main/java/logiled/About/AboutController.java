@@ -46,7 +46,7 @@ public class AboutController implements Initializable {
         });
         gitHubHLink.setOnAction(ActionEvent-> {
             try {
-                hs.showDocument("https://github.com/developersu/LoLed");
+                hs.showDocument("https://github.com/developersu/LogiLed");
             } catch (Exception ignored){}   // No luck for linux =(
         });
         blogspotHLink.setOnAction(ActionEvent-> {

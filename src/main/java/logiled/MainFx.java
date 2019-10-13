@@ -36,9 +36,9 @@ public class MainFx extends Application {
         );
 
         primaryStage.setTitle("LogiLed "+appVersion);
-        primaryStage.setMinWidth(1160);
+        primaryStage.setMinWidth(1215);
         primaryStage.setMinHeight(550);
-        Scene mainScene = new Scene(root, 1160, 525);
+        Scene mainScene = new Scene(root, 1215, 525);
         mainScene.getStylesheets().add("/light.css");
         primaryStage.setScene(mainScene);
         primaryStage.show();
