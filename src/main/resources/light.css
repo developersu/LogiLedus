@@ -35,7 +35,7 @@
     -fx-text-fill: #2c2c2c;
     -fx-effect: dropshadow(three-pass-box, #e82382, 2, 0, 0, 0);
 }
-// -========================+ TextArea =====================-
+/* -========================+ TextArea =====================- */
 .text-area{
     -fx-background-color: transparent;
     -fx-control-inner-background: #fefefe;
@@ -71,11 +71,13 @@
     -fx-padding: 10 5 10 5;
 }
 
+/* -======================== ToolBar =========================- */
+/*
 .tool-bar{
     -fx-background-color: transparent;
 }
-
-// -======================== Choice box =========================-
+*/
+/* -======================== Choice box =========================- */
 .choice-box {
     -fx-background-color: #fefefe;
     -fx-border-color: #fefefe;
@@ -111,7 +113,7 @@
     -fx-text-fill: #2c2c2c;
 }
 
-// -======================== TAB PANE =========================-
+/* -======================== TAB PANE =========================- */
 .tab-pane .tab SVGPath{
     -fx-fill: #2c2c2c;
 }
@@ -152,7 +154,7 @@
 .tab-pane > .tab-header-area > .headers-region > .tab {
     -fx-padding: 10;
 }
-// -=========================== TABLE ======================-
+/* -=========================== TABLE ======================- */
 .table-view {
     -fx-background-color: #fefefe;
     -fx-background-image: url(app_logo.png);
@@ -201,7 +203,7 @@
     -fx-padding: 0.0em; /* 0 */
     -fx-table-cell-border-color: #b0b0b0;
 }
-// -========================== Context menu =====================-
+/* -========================== Context menu =====================- */
 .context-menu {
   -fx-background-color: #fefefe;
   -fx-cursor: hand;
@@ -212,7 +214,7 @@
 .context-menu .menu-item:focused .label {
   -fx-text-fill: white;
 }
-// -========================== Text Field =====================-
+/* -========================== Text Field =====================- */
 .text-field {
     -fx-border-color: #289de8;
     -fx-border-width: 0 0 1 0;
@@ -225,7 +227,7 @@
     -fx-background-color: transparent;
     -fx-text-fill: #e82382;
 }
-// -========================== footer pane =====================-
+/* -========================== footer pane =====================-  */
 .footer{
     -fx-background-color: #ffffff;
 }

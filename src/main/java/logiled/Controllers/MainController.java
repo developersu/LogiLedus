@@ -51,7 +51,10 @@ public class MainController implements Initializable {
                 commThread.setDaemon(true);
                 commThread.start();
             }
-            //else if (MainTabPane.getSelectionModel().getSelectedItem().getId().equals("EffectsTab")) { // todo }
+            else if (MainTabPane.getSelectionModel().getSelectedItem().getId().equals("EffectsTab")) {
+                // TODO
+                System.out.println(EffectsController.getEffect());
+            }
         });
     }
 }

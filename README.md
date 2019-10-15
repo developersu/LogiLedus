@@ -24,11 +24,11 @@ JRE/JDK 8u60 or higher.
 
 1. Install JRE/JDK 8u60 or higher (openJDK is good. Oracle's one is also good). JavaFX not needed (it's embedded).
 
-2. `root # java -jar /path/to/NS-USBloader.jar`
+2. `root # java -jar /path/to/application.jar`
 
 3. Optional. Add user to 'udev' rules to use NS not-from-root-account
 ```
-root # vim /etc/udev/rules.d/99-NS.rules
+root # vim /etc/udev/rules.d/99-G513.rules
 SUBSYSTEM=="usb", ATTRS{idVendor}=="046D", ATTRS{idProduct}=="c33c", GROUP="plugdev"
 root # udevadm control --reload-rules && udevadm trigger
 ```

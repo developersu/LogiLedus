@@ -1,5 +1,5 @@
 package logiled.Controllers;
-
+// TODO: rewrite to ENUM
 class LoCodepage {
     static byte getCode(String id){
         switch (id){
