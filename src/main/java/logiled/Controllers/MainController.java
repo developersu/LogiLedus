@@ -5,7 +5,8 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import logiled.About.AboutWindow;
 import logiled.MessagesConsumer;
-import logiled.USB.Communications;
+import logiled.USB.EffectsThread;
+import logiled.USB.KeyLedThread;
 
 import java.net.URL;
 import java.util.HashMap;
@@ -34,6 +35,7 @@ public class MainController implements Initializable {
     @FXML
     private MenuItem aboutMenuItem;
 
+    // TODO: add block & release-button function
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -46,14 +48,16 @@ public class MainController implements Initializable {
                 HashMap<String, List<byte[][]>> rules = KeysLedsController.getRules();
                 if (rules == null)
                     return;
-                Communications communications = new Communications(rules);
-                Thread commThread = new Thread(communications);
+                KeyLedThread keyLedThread = new KeyLedThread(rules);
+                Thread commThread = new Thread(keyLedThread);
                 commThread.setDaemon(true);
                 commThread.start();
             }
             else if (MainTabPane.getSelectionModel().getSelectedItem().getId().equals("EffectsTab")) {
-                // TODO
-                System.out.println(EffectsController.getEffect());
+                EffectsThread effectsThread = new EffectsThread(EffectsController.getEffect());
+                Thread commThread = new Thread(effectsThread);
+                commThread.setDaemon(true);
+                commThread.start();
             }
         });
     }

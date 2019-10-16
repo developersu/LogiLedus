@@ -16,24 +16,30 @@
          <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
       </padding>
       <children>
-      <MenuButton fx:id="effectsMenu" mnemonicParsing="false">
-        <items>
-          <RadioMenuItem fx:id="disRMI" mnemonicParsing="false" onAction="#selectEffect" text="%effect_disable">
-               <toggleGroup>
-                  <ToggleGroup fx:id="effectsToggleGrp" />
-               </toggleGroup></RadioMenuItem>
-          <RadioMenuItem fx:id="constRMI" mnemonicParsing="false" onAction="#selectEffect" selected="true" text="%effect_constant" toggleGroup="$effectsToggleGrp" />
-            <RadioMenuItem fx:id="breathRMI" mnemonicParsing="false" onAction="#selectEffect" text="%effect_breath" toggleGroup="$effectsToggleGrp" />
-            <RadioMenuItem fx:id="circlesOnPressRMI" mnemonicParsing="false" onAction="#selectEffect" text="%effect_cirles_on_press" toggleGroup="$effectsToggleGrp" />
-            <RadioMenuItem fx:id="cycleRMI" mnemonicParsing="false" onAction="#selectEffect" text="%effect_cycle" toggleGroup="$effectsToggleGrp" />
-            <RadioMenuItem fx:id="hWaveFrwRMI" mnemonicParsing="false" onAction="#selectEffect" text="%effect_wave_horizontal" toggleGroup="$effectsToggleGrp" />
-            <RadioMenuItem fx:id="vWaveFrwRMI" mnemonicParsing="false" onAction="#selectEffect" text="%effect_wave_vertical" toggleGroup="$effectsToggleGrp" />
-            <RadioMenuItem fx:id="cntrToEdgWaveRMI" mnemonicParsing="false" onAction="#selectEffect" text="%effect_wave_center_to_edge" toggleGroup="$effectsToggleGrp" />
-            <RadioMenuItem fx:id="hWaveBkwRMI" mnemonicParsing="false" onAction="#selectEffect" text="%effect_wave_horizontal_reverse" toggleGroup="$effectsToggleGrp" />
-            <RadioMenuItem fx:id="vWaveBkwRMI" mnemonicParsing="false" onAction="#selectEffect" text="%effect_wave_vertical_reverse" toggleGroup="$effectsToggleGrp" />
-            <RadioMenuItem fx:id="edgToCntrWaveRMI" mnemonicParsing="false" onAction="#selectEffect" text="%effect_wave_edge_to_center" toggleGroup="$effectsToggleGrp" />
-        </items>
-      </MenuButton>
+      <HBox spacing="5.0">
+         <children>
+            <MenuButton fx:id="effectsMenu" mnemonicParsing="false">
+              <items>
+                <RadioMenuItem fx:id="disRMI" mnemonicParsing="false" onAction="#selectEffect" selected="true" text="%effect_disable">
+                     <toggleGroup>
+                        <ToggleGroup fx:id="effectsToggleGrp" />
+                     </toggleGroup>
+                  </RadioMenuItem>
+                <RadioMenuItem fx:id="constRMI" mnemonicParsing="false" onAction="#selectEffect" text="%effect_constant" toggleGroup="$effectsToggleGrp" />
+                  <RadioMenuItem fx:id="breathRMI" mnemonicParsing="false" onAction="#selectEffect" text="%effect_breath" toggleGroup="$effectsToggleGrp" />
+                  <RadioMenuItem fx:id="circlesOnPressRMI" mnemonicParsing="false" onAction="#selectEffect" text="%effect_cirles_on_press" toggleGroup="$effectsToggleGrp" />
+                  <RadioMenuItem fx:id="cycleRMI" mnemonicParsing="false" onAction="#selectEffect" text="%effect_cycle" toggleGroup="$effectsToggleGrp" />
+                  <RadioMenuItem fx:id="hWaveFrwRMI" mnemonicParsing="false" onAction="#selectEffect" text="%effect_wave_horizontal" toggleGroup="$effectsToggleGrp" />
+                  <RadioMenuItem fx:id="vWaveFrwRMI" mnemonicParsing="false" onAction="#selectEffect" text="%effect_wave_vertical" toggleGroup="$effectsToggleGrp" />
+                  <RadioMenuItem fx:id="cntrToEdgWaveRMI" mnemonicParsing="false" onAction="#selectEffect" text="%effect_wave_center_to_edge" toggleGroup="$effectsToggleGrp" />
+                  <RadioMenuItem fx:id="hWaveBkwRMI" mnemonicParsing="false" onAction="#selectEffect" text="%effect_wave_horizontal_reverse" toggleGroup="$effectsToggleGrp" />
+                  <RadioMenuItem fx:id="vWaveBkwRMI" mnemonicParsing="false" onAction="#selectEffect" text="%effect_wave_vertical_reverse" toggleGroup="$effectsToggleGrp" />
+                  <RadioMenuItem fx:id="edgToCntrWaveRMI" mnemonicParsing="false" onAction="#selectEffect" text="%effect_wave_edge_to_center" toggleGroup="$effectsToggleGrp" />
+              </items>
+            </MenuButton>
+               <ColorPicker fx:id="mainClrPkr" visible="false" />
+         </children>
+      </HBox>
          <Separator prefWidth="200.0" />
          <HBox alignment="CENTER_LEFT" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="35.0">
             <children>
@@ -45,6 +51,5 @@
             <Label fx:id="mainSlideInfoLbl" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="40.0" textFill="DIMGRAY" visible="false" />
             </children>
          </HBox>
-         <ColorPicker fx:id="mainClrPkr" visible="false" />
       </children>
 </VBox>
