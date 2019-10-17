@@ -15,7 +15,7 @@ public enum LoEffects {
 
     private final byte value;
 
-    private LoEffects(byte value){
+    LoEffects(byte value){
         this.value = value;
     }
 

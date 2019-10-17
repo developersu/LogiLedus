@@ -1,0 +1,338 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.SVGPath?>
+<?import javafx.scene.text.Font?>
+
+<VBox spacing="5.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="logiled.Controllers.GameModeController">
+   <children>
+      <ToolBar>
+         <items>
+            <Button fx:id="resetBtn" mnemonicParsing="false">
+               <tooltip>
+                  <Tooltip text="%btn_reset" />
+               </tooltip>
+               <graphic>
+                  <SVGPath content="M2 12C2 16.97 6.03 21 11 21C13.39 21 15.68 20.06 17.4 18.4L15.9 16.9C14.63 18.25 12.86 19 11 19C4.76 19 1.64 11.46 6.05 7.05C10.46 2.64 18 5.77 18 12H15L19 16H19.1L23 12H20C20 7.03 15.97 3 11 3C6.03 3 2 7.03 2 12Z" />
+               </graphic></Button>
+         </items>
+      </ToolBar>
+      <HBox spacing="17.0">
+               <children>
+                  <VBox>
+                     <children>
+                        <HBox spacing="2.0">
+                           <children>
+                              <ToggleButton fx:id="k_esc" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#toggleBntAction" prefHeight="45.0" prefWidth="45.0" text="ESC">
+                                 <font>
+                                    <Font size="10.0" />
+                                 </font>
+                              </ToggleButton>
+                              <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1.0" prefWidth="40.0" HBox.hgrow="NEVER" />
+                              <ToggleButton fx:id="k_f1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#toggleBntAction" prefHeight="45.0" prefWidth="45.0" text="F1">
+                           <font>
+                              <Font size="10.0" />
+                           </font>
+                              </ToggleButton>
+                              <ToggleButton fx:id="k_f2" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#toggleBntAction" prefHeight="45.0" prefWidth="45.0" text="F2">
+                           <font>
+                              <Font size="10.0" />
+                           </font>
+                              </ToggleButton>
+                              <ToggleButton fx:id="k_f3" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#toggleBntAction" prefHeight="45.0" prefWidth="45.0" text="F3">
+                           <font>
+                              <Font size="10.0" />
+                           </font>
+                              </ToggleButton>
+                              <ToggleButton fx:id="k_f4" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#toggleBntAction" prefHeight="45.0" prefWidth="45.0" text="F4">
+                           <font>
+                              <Font size="10.0" />
+                           </font>
+                              </ToggleButton>
+                              <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1.0" prefWidth="40.0" />
+                              <ToggleButton fx:id="k_f5" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#toggleBntAction" prefHeight="45.0" prefWidth="45.0" text="F5">
+                           <font>
+                              <Font size="10.0" />
+                           </font>
+                              </ToggleButton>
+                              <ToggleButton fx:id="k_f6" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#toggleBntAction" prefHeight="45.0" prefWidth="45.0" text="F6">
+                           <font>
+                              <Font size="10.0" />
+                           </font>
+                              </ToggleButton>
+                              <ToggleButton fx:id="k_f7" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#toggleBntAction" prefHeight="45.0" prefWidth="45.0" text="F7">
+                           <font>
+                              <Font size="10.0" />
+                           </font>
+                              </ToggleButton>
+                              <ToggleButton fx:id="k_f8" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#toggleBntAction" prefHeight="45.0" prefWidth="45.0" text="F8">
+                           <font>
+                              <Font size="10.0" />
+                           </font>
+                              </ToggleButton>
+                              <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1.0" prefWidth="40.0" />
+                              <ToggleButton fx:id="k_f9" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#toggleBntAction" prefHeight="45.0" prefWidth="45.0" text="F9">
+                           <font>
+                              <Font size="10.0" />
+                           </font>
+                              </ToggleButton>
+                              <ToggleButton fx:id="k_f10" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#toggleBntAction" prefHeight="45.0" prefWidth="45.0" text="F10">
+                           <font>
+                              <Font size="10.0" />
+                           </font>
+                              </ToggleButton>
+                              <ToggleButton fx:id="k_f11" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#toggleBntAction" prefHeight="45.0" prefWidth="45.0" text="F11">
+                           <font>
+                              <Font size="10.0" />
+                           </font>
+                              </ToggleButton>
+                              <ToggleButton fx:id="k_f12" mnemonicParsing="false" onAction="#toggleBntAction" prefHeight="45.0" prefWidth="45.0" text="F12">
+                           <font>
+                              <Font size="10.0" />
+                           </font>
+                              </ToggleButton>
+                              <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1.0" prefWidth="17.0" />
+                              <ToggleButton fx:id="k_prtscr" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#toggleBntAction" prefHeight="45.0" prefWidth="55.0" text="PRTSC">
+                                 <font>
+                                    <Font size="10.0" />
+                                 </font>
+                              </ToggleButton>
+                              <ToggleButton fx:id="k_scrl" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#toggleBntAction" prefHeight="45.0" prefWidth="55.0" text="SCRLK">
+                                 <font>
+                                    <Font size="10.0" />
+                                 </font>
+                              </ToggleButton>
+                              <ToggleButton fx:id="k_pause" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#toggleBntAction" prefHeight="45.0" prefWidth="55.0" text="PAUSE">
+                                 <font>
+                                    <Font size="10.0" />
+                                 </font>
+                              </ToggleButton>
+                           </children>
+                           <VBox.margin>
+                              <Insets bottom="17.0" />
+                           </VBox.margin>
+                        </HBox>
+                        <HBox spacing="2.0">
+                           <children>
+                              <ToggleButton fx:id="k_tilde" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#toggleBntAction" prefHeight="45.0" prefWidth="45.0" text="~" />
+                              <ToggleButton fx:id="k_1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#toggleBntAction" prefHeight="45.0" prefWidth="45.0" text="1" />
+                              <ToggleButton fx:id="k_2" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#toggleBntAction" prefHeight="45.0" prefWidth="45.0" text="2" />
+                              <ToggleButton fx:id="k_3" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#toggleBntAction" prefHeight="45.0" prefWidth="45.0" text="3" />
+                              <ToggleButton fx:id="k_4" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#toggleBntAction" prefHeight="45.0" prefWidth="45.0" text="4" />
+                              <ToggleButton fx:id="k_5" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#toggleBntAction" prefHeight="45.0" prefWidth="45.0" text="5" />
+                              <ToggleButton fx:id="k_6" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#toggleBntAction" prefHeight="45.0" prefWidth="45.0" text="6" />
+                              <ToggleButton fx:id="k_7" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#toggleBntAction" prefHeight="45.0" prefWidth="45.0" text="7" />
+                              <ToggleButton fx:id="k_8" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#toggleBntAction" prefHeight="45.0" prefWidth="45.0" text="8" />
+                              <ToggleButton fx:id="k_9" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#toggleBntAction" prefHeight="45.0" prefWidth="45.0" text="9" />
+                              <ToggleButton fx:id="k_0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#toggleBntAction" prefHeight="45.0" prefWidth="45.0" text="0" />
+                              <ToggleButton fx:id="k_dash" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#toggleBntAction" prefHeight="45.0" prefWidth="45.0" text="-" />
+                              <ToggleButton fx:id="k_equal" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#toggleBntAction" prefHeight="45.0" prefWidth="45.0" text="=" />
+                              <ToggleButton fx:id="k_backspace" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#toggleBntAction" prefHeight="45.0" prefWidth="125.0" text="←" />
+                              <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1.0" prefWidth="17.0" />
+                              <ToggleButton fx:id="k_ins" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#toggleBntAction" prefHeight="45.0" prefWidth="55.0" text="INS">
+                                 <font>
+                                    <Font size="10.0" />
+                                 </font>
+                              </ToggleButton>
+                              <ToggleButton fx:id="k_home" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#toggleBntAction" prefHeight="45.0" prefWidth="55.0" text="HOME">
+                                 <font>
+                                    <Font size="10.0" />
+                                 </font>
+                              </ToggleButton>
+                              <ToggleButton fx:id="k_pg_up" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#toggleBntAction" prefHeight="45.0" prefWidth="55.0" text="PG UP">
+                                 <font>
+                                    <Font size="10.0" />
+                                 </font>
+                              </ToggleButton>
+                           </children>
+                           <VBox.margin>
+                              <Insets bottom="2.0" />
+                           </VBox.margin>
+                        </HBox>
+                        <HBox spacing="2.0">
+                           <children>
+                              <ToggleButton fx:id="k_tab" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#toggleBntAction" prefHeight="45.0" prefWidth="60.0" text="TAB" />
+                              <ToggleButton fx:id="k_q" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#toggleBntAction" prefHeight="45.0" prefWidth="45.0" text="Q" />
+                              <ToggleButton fx:id="k_w" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#toggleBntAction" prefHeight="45.0" prefWidth="45.0" text="W" />
+                              <ToggleButton fx:id="k_e" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#toggleBntAction" prefHeight="45.0" prefWidth="45.0" text="E" />
+                              <ToggleButton fx:id="k_r" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#toggleBntAction" prefHeight="45.0" prefWidth="45.0" text="R" />
+                              <ToggleButton fx:id="k_t" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#toggleBntAction" prefHeight="45.0" prefWidth="45.0" text="T" />
+                              <ToggleButton fx:id="k_y" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#toggleBntAction" prefHeight="45.0" prefWidth="45.0" text="Y" />
+                              <ToggleButton fx:id="k_u" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#toggleBntAction" prefHeight="45.0" prefWidth="45.0" text="U" />
+                              <ToggleButton fx:id="k_i" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#toggleBntAction" prefHeight="45.0" prefWidth="45.0" text="I" />
+                              <ToggleButton fx:id="k_o" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#toggleBntAction" prefHeight="45.0" prefWidth="45.0" text="O" />
+                              <ToggleButton fx:id="k_p" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#toggleBntAction" prefHeight="45.0" prefWidth="45.0" text="P" />
+                              <ToggleButton fx:id="k_bracket_open" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#toggleBntAction" prefHeight="45.0" prefWidth="45.0" text="[" />
+                              <ToggleButton fx:id="k_bracket_close" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#toggleBntAction" prefHeight="45.0" prefWidth="45.0" text="]" />
+                              <ToggleButton fx:id="k_backslash" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#toggleBntAction" prefHeight="45.0" prefWidth="110.0" text="\\" />
+                              <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1.0" prefWidth="17.0" />
+                              <ToggleButton fx:id="k_del" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#toggleBntAction" prefHeight="45.0" prefWidth="55.0" text="DEL">
+                                 <font>
+                                    <Font size="10.0" />
+                                 </font>
+                              </ToggleButton>
+                              <ToggleButton fx:id="k_end" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#toggleBntAction" prefHeight="45.0" prefWidth="55.0" text="END">
+                                 <font>
+                                    <Font size="10.0" />
+                                 </font>
+                              </ToggleButton>
+                              <ToggleButton fx:id="k_pg_dn" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#toggleBntAction" prefHeight="45.0" prefWidth="55.0" text="PG DN">
+                                 <font>
+                                    <Font size="10.0" />
+                                 </font>
+                              </ToggleButton>
+                           </children>
+                           <VBox.margin>
+                              <Insets bottom="2.0" />
+                           </VBox.margin>
+                        </HBox>
+                        <HBox spacing="2.0">
+                           <VBox.margin>
+                              <Insets bottom="2.0" />
+                           </VBox.margin>
+                           <children>
+                              <ToggleButton fx:id="k_caps" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#toggleBntAction" prefHeight="45.0" prefWidth="70.0" text="CAPS" />
+                              <ToggleButton fx:id="k_a" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#toggleBntAction" prefHeight="45.0" prefWidth="45.0" text="A" />
+                              <ToggleButton fx:id="k_s" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#toggleBntAction" prefHeight="45.0" prefWidth="45.0" text="S" />
+                              <ToggleButton fx:id="k_d" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#toggleBntAction" prefHeight="45.0" prefWidth="45.0" text="D" />
+                              <ToggleButton fx:id="k_f" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#toggleBntAction" prefHeight="45.0" prefWidth="45.0" text="F" />
+                              <ToggleButton fx:id="k_g" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#toggleBntAction" prefHeight="45.0" prefWidth="45.0" text="G" />
+                              <ToggleButton fx:id="k_h" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#toggleBntAction" prefHeight="45.0" prefWidth="45.0" text="H" />
+                              <ToggleButton fx:id="k_j" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#toggleBntAction" prefHeight="45.0" prefWidth="45.0" text="J" />
+                              <ToggleButton fx:id="k_k" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#toggleBntAction" prefHeight="45.0" prefWidth="45.0" text="K" />
+                              <ToggleButton fx:id="k_l" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#toggleBntAction" prefHeight="45.0" prefWidth="45.0" text="L" />
+                              <ToggleButton fx:id="k_semicolon" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#toggleBntAction" prefHeight="45.0" prefWidth="45.0" text=";" />
+                              <ToggleButton fx:id="k_quotation" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#toggleBntAction" prefHeight="45.0" prefWidth="45.0" text="'" />
+                              <ToggleButton fx:id="k_enter" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#toggleBntAction" prefHeight="45.0" prefWidth="147.0" text="ENTER" />
+                           </children>
+                        </HBox>
+                        <HBox spacing="2.0">
+                           <VBox.margin>
+                              <Insets bottom="2.0" />
+                           </VBox.margin>
+                           <children>
+                              <ToggleButton fx:id="k_l_shift" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#toggleBntAction" prefHeight="45.0" prefWidth="85.0" text="L SHIFT" />
+                              <ToggleButton fx:id="k_z" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#toggleBntAction" prefHeight="45.0" prefWidth="45.0" text="Z" />
+                              <ToggleButton fx:id="k_x" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#toggleBntAction" prefHeight="45.0" prefWidth="45.0" text="X" />
+                              <ToggleButton fx:id="k_c" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#toggleBntAction" prefHeight="45.0" prefWidth="45.0" text="C" />
+                              <ToggleButton fx:id="k_v" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#toggleBntAction" prefHeight="45.0" prefWidth="45.0" text="V" />
+                              <ToggleButton fx:id="k_b" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#toggleBntAction" prefHeight="45.0" prefWidth="45.0" text="B" />
+                              <ToggleButton fx:id="k_n" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#toggleBntAction" prefHeight="45.0" prefWidth="45.0" text="N" />
+                              <ToggleButton fx:id="k_m" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#toggleBntAction" prefHeight="45.0" prefWidth="45.0" text="M" />
+                              <ToggleButton fx:id="k_comma" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#toggleBntAction" prefHeight="45.0" prefWidth="45.0" text="," />
+                              <ToggleButton fx:id="k_dot" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#toggleBntAction" prefHeight="45.0" prefWidth="45.0" text="." />
+                              <ToggleButton fx:id="k_shash" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#toggleBntAction" prefHeight="45.0" prefWidth="45.0" text="/" />
+                              <ToggleButton fx:id="k_r_shift" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#toggleBntAction" prefHeight="45.0" prefWidth="179.0" text="R SHIFT" />
+                              <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1.0" prefWidth="74.0" />
+                              <ToggleButton fx:id="k_arr_up" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#toggleBntAction" prefHeight="45.0" prefWidth="55.0" text="↑" />
+                           </children>
+                        </HBox>
+                        <HBox spacing="2.0">
+                           <children>
+                              <ToggleButton fx:id="k_l_ctrl" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#toggleBntAction" prefHeight="45.0" prefWidth="55.0" text="L CTRL">
+                                 <font>
+                                    <Font size="10.0" />
+                                 </font>
+                              </ToggleButton>
+                              <ToggleButton disable="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="45.0" prefWidth="42.0" selected="true" styleClass="always_off_button" text="WIN">
+                                 <font>
+                                    <Font size="10.0" />
+                                 </font>
+                              </ToggleButton>
+                              <ToggleButton fx:id="k_l_alt" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#toggleBntAction" prefHeight="45.0" prefWidth="55.0" text="ALT">
+                                 <font>
+                                    <Font size="10.0" />
+                                 </font>
+                              </ToggleButton>
+                              <ToggleButton fx:id="k_space" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#toggleBntAction" prefHeight="45.0" prefWidth="270.0" text="—" />
+                              <ToggleButton fx:id="k_r_alt" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#toggleBntAction" prefHeight="45.0" prefWidth="72.0" text="ALT GR">
+                                 <font>
+                                    <Font size="10.0" />
+                                 </font>
+                              </ToggleButton>
+                              <ToggleButton disable="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="45.0" prefWidth="72.0" selected="true" styleClass="always_off_button" text="FN">
+                                 <font>
+                                    <Font size="10.0" />
+                                 </font>
+                              </ToggleButton>
+                              <ToggleButton disable="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="45.0" prefWidth="72.0" selected="true" styleClass="always_off_button" text="MENU">
+                                 <font>
+                                    <Font size="10.0" />
+                                 </font>
+                              </ToggleButton>
+                              <ToggleButton fx:id="k_r_ctrl" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#toggleBntAction" prefHeight="45.0" prefWidth="84.0" text="R CTRL">
+                                 <font>
+                                    <Font size="10.0" />
+                                 </font>
+                              </ToggleButton>
+                              <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1.0" prefWidth="17.0" />
+                              <ToggleButton fx:id="k_arr_left" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#toggleBntAction" prefHeight="45.0" prefWidth="55.0" text="←" />
+                              <ToggleButton fx:id="k_arr_down" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#toggleBntAction" prefHeight="45.0" prefWidth="55.0" text="↓" />
+                              <ToggleButton fx:id="k_arr_right" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#toggleBntAction" prefHeight="45.0" prefWidth="55.0" text="→" />
+                           </children>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                     <padding>
+                        <Insets bottom="2.0" />
+                     </padding>
+                        </HBox>
+                     </children>
+                  </VBox>
+                  <GridPane alignment="BOTTOM_LEFT" hgap="2.0" vgap="2.0" HBox.hgrow="NEVER">
+                    <columnConstraints>
+                      <ColumnConstraints halignment="CENTER" hgrow="NEVER" />
+                        <ColumnConstraints halignment="CENTER" hgrow="NEVER" />
+                      <ColumnConstraints halignment="CENTER" hgrow="NEVER" />
+                        <ColumnConstraints halignment="CENTER" hgrow="NEVER" />
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="51.0" valignment="CENTER" vgrow="NEVER" />
+                      <RowConstraints valignment="CENTER" vgrow="NEVER" />
+                      <RowConstraints valignment="CENTER" vgrow="NEVER" />
+                      <RowConstraints valignment="CENTER" vgrow="NEVER" />
+                        <RowConstraints valignment="CENTER" vgrow="NEVER" />
+                        <RowConstraints valignment="CENTER" vgrow="NEVER" />
+                        <RowConstraints valignment="CENTER" vgrow="NEVER" />
+                    </rowConstraints>
+                     <children>
+                        <ToggleButton fx:id="k_num" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#toggleBntAction" prefHeight="45.0" prefWidth="50.0" text="NUM" GridPane.rowIndex="1">
+                           <font>
+                              <Font size="10.0" />
+                           </font>
+                        </ToggleButton>
+                        <ToggleButton fx:id="k_num_slash" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#toggleBntAction" prefHeight="45.0" prefWidth="50.0" text="/" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <ToggleButton fx:id="k_num_asterisk" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#toggleBntAction" prefHeight="45.0" prefWidth="50.0" text="*" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                        <ToggleButton fx:id="k_num_7" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#toggleBntAction" prefHeight="45.0" prefWidth="50.0" text="7" GridPane.rowIndex="2" />
+                        <ToggleButton fx:id="k_num_4" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#toggleBntAction" prefHeight="45.0" prefWidth="50.0" text="4" GridPane.rowIndex="3" />
+                        <ToggleButton fx:id="k_num_0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#toggleBntAction" prefHeight="45.0" prefWidth="102.0" text="0" GridPane.columnSpan="2" GridPane.rowIndex="5" />
+                        <ToggleButton fx:id="k_num_1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#toggleBntAction" prefHeight="45.0" prefWidth="50.0" text="1" GridPane.rowIndex="4" />
+                        <ToggleButton fx:id="k_num_8" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#toggleBntAction" prefHeight="45.0" prefWidth="50.0" text="8" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <ToggleButton fx:id="k_num_9" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#toggleBntAction" prefHeight="45.0" prefWidth="50.0" text="9" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                        <ToggleButton fx:id="k_num_5" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#toggleBntAction" prefHeight="45.0" prefWidth="50.0" text="5" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                        <ToggleButton fx:id="k_num_6" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#toggleBntAction" prefHeight="45.0" prefWidth="50.0" text="6" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+                        <ToggleButton fx:id="k_num_2" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#toggleBntAction" prefHeight="45.0" prefWidth="50.0" text="2" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                        <ToggleButton fx:id="k_num_3" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#toggleBntAction" prefHeight="45.0" prefWidth="50.0" text="3" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+                        <ToggleButton fx:id="k_num_minus" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#toggleBntAction" prefHeight="45.0" prefWidth="50.0" text="-" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                        <ToggleButton fx:id="k_num_plus" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#toggleBntAction" prefHeight="93.0" prefWidth="50.0" text="+" GridPane.columnIndex="3" GridPane.rowIndex="2" GridPane.rowSpan="2" />
+                        <ToggleButton fx:id="k_num_enter" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#toggleBntAction" prefHeight="93.0" prefWidth="50.0" text="↵" GridPane.columnIndex="3" GridPane.rowIndex="4" GridPane.rowSpan="2" />
+                        <ToggleButton fx:id="k_num_period" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#toggleBntAction" prefHeight="45.0" prefWidth="50.0" text="," GridPane.columnIndex="2" GridPane.rowIndex="5" />
+                     </children>
+                  </GridPane>
+               </children>
+            </HBox>
+   </children>
+   <padding>
+      <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
+   </padding>
+</VBox>

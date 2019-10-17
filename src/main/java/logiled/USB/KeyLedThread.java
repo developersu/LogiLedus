@@ -1,5 +1,7 @@
 package logiled.USB;
 
+import logiled.MessagesConsumer;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
@@ -87,9 +89,16 @@ public class KeyLedThread extends LoThread implements Runnable{
 
         handler = usbConnect.getHandlerKbrd();
 
+        boolean notFailed = true;
+
         for (byte[] cmd : keyLedCommands)
-            if (write(cmd))
+            if (write(cmd)){
+                notFailed = false;
                 break;
+            }
+
+        if (notFailed)
+            MessagesConsumer.getInstance().inform("Complete!");
 
         usbConnect.close();
     }

@@ -1,5 +1,7 @@
 package logiled.USB;
 
+import logiled.MessagesConsumer;
+
 import java.util.List;
 
 public class GameModeThread extends LoThread implements Runnable{
@@ -23,6 +25,7 @@ public class GameModeThread extends LoThread implements Runnable{
 
     @Override
     public void run() {
+        /*
         if (command == null)
             return;
 
@@ -33,9 +36,11 @@ public class GameModeThread extends LoThread implements Runnable{
 
         handler = usbConnect.getHandlerKbrd();
 
-        write(command);
+        if (! write(command))
+            MessagesConsumer.getInstance().inform("Complete!");
 
         usbConnect.close();
+        */
     }
 
 }

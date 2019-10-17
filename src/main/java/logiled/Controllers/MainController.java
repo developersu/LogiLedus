@@ -6,6 +6,7 @@ import javafx.scene.control.*;
 import logiled.About.AboutWindow;
 import logiled.MessagesConsumer;
 import logiled.USB.EffectsThread;
+import logiled.USB.GameModeThread;
 import logiled.USB.KeyLedThread;
 
 import java.net.URL;
@@ -19,6 +20,9 @@ public class MainController implements Initializable {
 
     @FXML
     private EffectsController EffectsController;
+
+    @FXML
+    private GameModeController GameModeController;
 
     @FXML
     private TabPane MainTabPane;
@@ -56,6 +60,15 @@ public class MainController implements Initializable {
             else if (MainTabPane.getSelectionModel().getSelectedItem().getId().equals("EffectsTab")) {
                 EffectsThread effectsThread = new EffectsThread(EffectsController.getEffect());
                 Thread commThread = new Thread(effectsThread);
+                commThread.setDaemon(true);
+                commThread.start();
+            }
+            else {  // Consider as GameMode; refactor in case more tabs added.
+                List<Byte> disKeysList = GameModeController.getKeys();
+                if (disKeysList.isEmpty())
+                    return;
+                GameModeThread gameModeThread = new GameModeThread(disKeysList);
+                Thread commThread = new Thread(gameModeThread);
                 commThread.setDaemon(true);
                 commThread.start();
             }

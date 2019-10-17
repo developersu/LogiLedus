@@ -1,6 +1,7 @@
 package logiled.USB;
 
 import logiled.Controllers.LoEffects;
+import logiled.MessagesConsumer;
 
 import java.util.HashMap;
 
@@ -61,7 +62,8 @@ public class EffectsThread extends LoThread implements Runnable{
 
         handler = usbConnect.getHandlerKbrd();
 
-        write(command);
+        if (! write(command))
+            MessagesConsumer.getInstance().inform("Complete!");
 
         usbConnect.close();
     }
