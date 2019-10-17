@@ -65,8 +65,6 @@ public class MainController implements Initializable {
             }
             else {  // Consider as GameMode; refactor in case more tabs added.
                 List<Byte> disKeysList = GameModeController.getKeys();
-                if (disKeysList.isEmpty())
-                    return;
                 GameModeThread gameModeThread = new GameModeThread(disKeysList);
                 Thread commThread = new Thread(gameModeThread);
                 commThread.setDaemon(true);
