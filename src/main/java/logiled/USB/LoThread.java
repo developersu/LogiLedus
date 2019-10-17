@@ -1,5 +1,6 @@
 package logiled.USB;
 
+import javafx.concurrent.Task;
 import logiled.MessagesConsumer;
 import org.usb4java.DeviceHandle;
 import org.usb4java.LibUsb;
@@ -7,7 +8,7 @@ import org.usb4java.LibUsb;
 import java.nio.ByteBuffer;
 import java.nio.IntBuffer;
 
-abstract class LoThread {
+abstract class LoThread extends Task<Void> {
 
     DeviceHandle handler;
 

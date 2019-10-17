@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class GameModeThread extends LoThread implements Runnable{
+public class GameModeThread extends LoThread{
 
     private static final byte[] game_key_prepare = {
             0x11, (byte) 0xff, 0x03, 0x3c, 0x00, 0x00, 0x00, 0x00,     0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
@@ -48,11 +48,11 @@ public class GameModeThread extends LoThread implements Runnable{
     }
 
     @Override
-    public void run() {
+    protected Void call() throws Exception {
         UsbConnect usbConnect = new UsbConnect();
 
         if (!usbConnect.isConnected())
-            return;
+            return null;
 
         handler = usbConnect.getHandlerKbrd();
 
@@ -68,5 +68,6 @@ public class GameModeThread extends LoThread implements Runnable{
             MessagesConsumer.getInstance().inform("Complete!");
 
         usbConnect.close();
+        return null;
     }
 }

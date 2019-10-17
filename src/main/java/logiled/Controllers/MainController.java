@@ -1,5 +1,6 @@
 package logiled.Controllers;
 
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
@@ -52,20 +53,25 @@ public class MainController implements Initializable {
                 HashMap<String, List<byte[][]>> rules = KeysLedsController.getRules();
                 if (rules == null)
                     return;
+                applyBtn.setDisable(true);
                 KeyLedThread keyLedThread = new KeyLedThread(rules);
+                keyLedThread.setOnSucceeded(EventHandler -> applyBtn.setDisable(false));       // <- I guess this shit never fails
                 Thread commThread = new Thread(keyLedThread);
                 commThread.setDaemon(true);
                 commThread.start();
             }
             else if (MainTabPane.getSelectionModel().getSelectedItem().getId().equals("EffectsTab")) {
+                applyBtn.setDisable(true);
                 EffectsThread effectsThread = new EffectsThread(EffectsController.getEffect());
+                effectsThread.setOnSucceeded(EventHandler -> applyBtn.setDisable(false));
                 Thread commThread = new Thread(effectsThread);
                 commThread.setDaemon(true);
                 commThread.start();
             }
             else {  // Consider as GameMode; refactor in case more tabs added.
-                List<Byte> disKeysList = GameModeController.getKeys();
-                GameModeThread gameModeThread = new GameModeThread(disKeysList);
+                applyBtn.setDisable(true);
+                GameModeThread gameModeThread = new GameModeThread(GameModeController.getKeys());
+                gameModeThread.setOnSucceeded(EventHandler -> applyBtn.setDisable(false));
                 Thread commThread = new Thread(gameModeThread);
                 commThread.setDaemon(true);
                 commThread.start();

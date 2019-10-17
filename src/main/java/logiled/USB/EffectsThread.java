@@ -5,7 +5,7 @@ import logiled.MessagesConsumer;
 
 import java.util.HashMap;
 
-public class EffectsThread extends LoThread implements Runnable{
+public class EffectsThread extends LoThread {
 
     private byte[] command;
 
@@ -49,16 +49,15 @@ public class EffectsThread extends LoThread implements Runnable{
                 command = effectWaveEdgeToCenter(effectData);
         }
     }
-
     @Override
-    public void run() {
+    protected Void call() throws Exception {
         if (command == null)
-            return;
+            return null;
 
         UsbConnect usbConnect = new UsbConnect();
 
         if (!usbConnect.isConnected())
-            return;
+            return null;
 
         handler = usbConnect.getHandlerKbrd();
 
@@ -66,6 +65,7 @@ public class EffectsThread extends LoThread implements Runnable{
             MessagesConsumer.getInstance().inform("Complete!");
 
         usbConnect.close();
+        return null;
     }
 
     private byte[] effectDisable(){

@@ -51,3 +51,8 @@ Want to support development? Make a donation* (see below):
 
 * [EN] Please note! This is non-commercial application. Any received money considered as a gift.
 * [RU] Пожалуйста обратите внимание! Это некоммерческое приложение. Перечисляя средства вы совершаете дарение.
+
+#### TODO
+[ ] Tray support
+[ ] Headless mode (CLI)
+[ ] Dark theme 

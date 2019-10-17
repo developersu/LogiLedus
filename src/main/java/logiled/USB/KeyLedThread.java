@@ -1,5 +1,6 @@
 package logiled.USB;
 
+import javafx.concurrent.Task;
 import logiled.MessagesConsumer;
 
 import java.util.ArrayList;
@@ -7,7 +8,7 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 
-public class KeyLedThread extends LoThread implements Runnable{
+public class KeyLedThread extends LoThread {
     // Keys and indicators individual settings
     private static final byte[] commit = {
             0x11, (byte) 0xff, 0x0c, 0x5a, 0x00, 0x00, 0x00, 0x00,    0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
@@ -77,15 +78,15 @@ public class KeyLedThread extends LoThread implements Runnable{
     }
 
     @Override
-    public void run() {
+    protected Void call() throws Exception {
         // If no commands in the query, then nothing to do
         if (keyLedCommands.size() == 0)
-            return;
+            return null;
 
         UsbConnect usbConnect = new UsbConnect();
 
         if (!usbConnect.isConnected())
-            return;
+            return null;
 
         handler = usbConnect.getHandlerKbrd();
 
@@ -101,6 +102,6 @@ public class KeyLedThread extends LoThread implements Runnable{
             MessagesConsumer.getInstance().inform("Complete!");
 
         usbConnect.close();
+        return null;
     }
-
 }
