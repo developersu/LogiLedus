@@ -53,6 +53,9 @@ Want to support development? Make a donation* (see below):
 * [RU] Пожалуйста обратите внимание! Это некоммерческое приложение. Перечисляя средства вы совершаете дарение.
 
 #### TODO
-[ ] Tray support
-[ ] Headless mode (CLI)
-[ ] Dark theme 
+
+* [x] Tray support
+* [ ] Configuration files support
+* [ ] Settings
+* [ ] Headless mode (CLI)
+* [ ] Dark theme 
