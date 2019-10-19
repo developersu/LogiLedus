@@ -6,7 +6,7 @@
 
     <groupId>loper</groupId>
     <artifactId>LogiLed</artifactId>
-    <version>0.4-SNAPSHOT</version>
+    <version>1.0-SNAPSHOT</version>
 
     <!-- <url></url> -->
     <description>
@@ -164,14 +164,15 @@
             <version>2.10.0</version>
             <scope>compile</scope>
         </dependency>
+
         <!--
-                <dependency>
-                    <groupId>net.java.dev.jna</groupId>
-                    <artifactId>jna</artifactId>
-                    <version>5.4.0</version>
-                    <scope>compile</scope>
-                </dependency>
-            -->
+            <dependency>
+                <groupId>net.java.dev.jna</groupId>
+                <artifactId>jna</artifactId>
+                <version>5.4.0</version>
+                <scope>compile</scope>
+            </dependency>
+        -->
     </dependencies>
     <build>
         <plugins>

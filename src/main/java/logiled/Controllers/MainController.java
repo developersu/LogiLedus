@@ -12,6 +12,7 @@ import logiled.About.AboutWindow;
 import logiled.MessagesConsumer;
 import logiled.Config.SettingsFileFormat;
 import logiled.ServiceWindow;
+import logiled.Settings.SettingsWindow;
 import logiled.USB.EffectsThread;
 import logiled.USB.GameModeThread;
 import logiled.USB.KeyLedThread;
@@ -39,7 +40,7 @@ public class MainController implements Initializable {
     private Tab KeyLedTab, EffectsTab;
     */
     @FXML
-    private Button applyBtn, openBtn, saveBtn, saveAsBtn, aboutBtn;
+    private Button applyBtn, openBtn, saveBtn, saveAsBtn, settingsBtn, aboutBtn;
 
     @FXML
     private Label infoLbl;
@@ -54,6 +55,7 @@ public class MainController implements Initializable {
         this.rb = resourceBundle;
 
         aboutBtn.setOnAction(actionEvent -> new AboutWindow());
+        settingsBtn.setOnAction(actionEvent -> new SettingsWindow());
         MessagesConsumer.getInstance().setInstance(infoLbl);
         MessagesConsumer.getInstance().start();
 

@@ -16,15 +16,21 @@ import java.util.Locale;
 import java.util.ResourceBundle;
 
 public class MainFx extends Application {
-    public static final String appVersion = "v0.4";
+    public static final String appVersion = "v1.0";
 
     private static boolean traySupport = true;
 
     private Stage stage;
+    private SystemTray tray;
+    private TrayIcon trayIcon;
+
     private ResourceBundle rb;
 
     @Override
     public void start(Stage primaryStage) throws Exception{
+        AppPreferences appPreferences = new AppPreferences();
+        if (traySupport)                                                // By default it's enabled, but in case it disabled from CLI, don't touch.
+            traySupport = appPreferences.getUseTray();        // Otherwise, check against preferences
         //-----------------------Tray support---------------------
         this.stage = primaryStage;
         if (traySupport){
@@ -32,7 +38,8 @@ public class MainFx extends Application {
             SwingUtilities.invokeLater(this::addAppToTray);
         }
         //--------------------------------------------------------
-        Mediator.getInstance().setInstance(getHostServices());
+        Mediator.getInstance().setHostServices(getHostServices());
+        Mediator.getInstance().setPreferences(appPreferences);
 
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/Main.fxml"));
 
@@ -52,8 +59,20 @@ public class MainFx extends Application {
                 new Image(getClass().getResourceAsStream("/ico/appIcon_128.png"))
         );
         // NOTE: tray leftovers
-        if (traySupport)
-            primaryStage.setOnCloseRequest(windowEvent -> primaryStage.hide());
+        if (traySupport) {
+            stage.setOnCloseRequest(windowEvent -> {
+                Platform.exit();
+                tray.remove(trayIcon);
+            });
+
+            stage.iconifiedProperty().addListener((observableValue, oldVal, iconified) -> {
+                if (iconified)
+                    Platform.runLater(this::hideStage);
+                else
+                    Platform.runLater(this::showStage);
+            });
+            //primaryStage.setOnCloseRequest(windowEvent -> primaryStage.hide());
+        }
 
         primaryStage.setTitle("LogiLed "+appVersion);
         primaryStage.setMinWidth(1215);
@@ -75,9 +94,9 @@ public class MainFx extends Application {
                 Platform.exit();
             }
 
-            SystemTray tray = SystemTray.getSystemTray();
+            tray = SystemTray.getSystemTray();
 
-            TrayIcon trayIcon = new TrayIcon(ImageIO.read(getClass().getResourceAsStream("/ico/appIcon_24.png")));
+            trayIcon = new TrayIcon(ImageIO.read(getClass().getResourceAsStream("/ico/appIcon_24.png")));
 
             trayIcon.addActionListener(ActionEvent -> Platform.runLater(this::showStage));
 
@@ -89,9 +108,16 @@ public class MainFx extends Application {
 
             java.awt.Font defaultFont = java.awt.Font.decode(null);
             java.awt.Font boldFont = defaultFont.deriveFont(java.awt.Font.BOLD);
+
+            MenuItem openItem = new MenuItem(rb.getString("open"));
+            openItem.addActionListener(actionEvent -> Platform.runLater(this::showStage));
+
+            openItem.setFont(boldFont);
             closeItem.setFont(boldFont);
 
             final PopupMenu popupMenu = new PopupMenu();
+            popupMenu.add(openItem);
+            popupMenu.addSeparator();
             popupMenu.add(closeItem);
             trayIcon.setPopupMenu(popupMenu);
             tray.add(trayIcon);
@@ -103,10 +129,16 @@ public class MainFx extends Application {
     }
 
     private void showStage() {
-        if (stage != null) {
-            stage.show();
-            stage.toFront();
-        }
+        if (stage == null)
+            return;
+        stage.show();
+        stage.toFront();
+    }
+
+    private void hideStage(){
+        if (stage == null)
+            return;
+        stage.hide();
     }
 
     public static void main(String[] args) {

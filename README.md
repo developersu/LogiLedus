@@ -58,8 +58,8 @@ Want to support development? Make a donation* (see below):
 * [x] Tray support
     * [ ] tray icon size checks
 * [x] Configuration files support
-* [ ] Settings
-    * [ ] Tray icon settings
+* [x] Settings
+    * [x] Tray icon settings
     * [ ] Autoload
 * [ ] Headless mode (CLI)
 * [x] Fix UI
