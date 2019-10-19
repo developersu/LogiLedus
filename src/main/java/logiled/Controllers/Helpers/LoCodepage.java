@@ -1,4 +1,4 @@
-package logiled.Controllers;
+package logiled.Controllers.Helpers;
 
 public enum  LoCodepage {
         l_game ((byte) 0x2),

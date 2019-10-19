@@ -5,6 +5,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.ToggleButton;
+import logiled.Controllers.Helpers.LoCodepage;
 
 import java.net.URL;
 import java.util.*;
@@ -16,14 +17,12 @@ public class GameModeController implements Initializable {
 
     private List<String> keySet;
 
-
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         keySet = new ArrayList<>();
         resetBtn.setOnAction(ActionEvent -> {
-            for (String keyID : keySet) {
+            for (String keyID : keySet)
                 ((ToggleButton) resetBtn.getScene().lookup("#"+keyID)).setSelected(false);
-            }
             keySet.clear();
         });
     }
@@ -43,5 +42,20 @@ public class GameModeController implements Initializable {
             listCodes.add(LoCodepage.valueOf(keyId).getValue());
 
         return listCodes;
+    }
+    /**
+     * Get set of keys disabled in game mode. Would be stored in config file.
+     * */
+    public List<String> getInternalKeySet(){
+        return keySet;
+    }
+    /**
+     * Restore from config file.
+     * */
+    public void setConfig(List<String> keySet){
+        resetBtn.fire();
+        this.keySet = keySet;
+        for (String keyID : keySet)
+            ((ToggleButton) resetBtn.getScene().lookup("#"+keyID)).setSelected(true);
     }
 }

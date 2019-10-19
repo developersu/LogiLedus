@@ -4,6 +4,8 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
+import javafx.scene.paint.Color;
+import logiled.Controllers.Helpers.LoEffects;
 
 import java.net.URL;
 import java.nio.ByteBuffer;
@@ -46,12 +48,12 @@ public class EffectsController implements Initializable {
         mainSlideInfoLbl.setText(String.format("%.0f", mainSlide.getValue()));
 
         effectsMenu.setText(((RadioMenuItem) effectsToggleGrp.getSelectedToggle()).getText());
+        effectsToggleGrp.selectedToggleProperty().addListener((observableValue, oldToggle, newToggle) -> effectsMenu.setText(((MenuItem) newToggle).getText()));
     }
 
     @FXML
     private void selectEffect(ActionEvent event){
         final RadioMenuItem item = (RadioMenuItem) event.getSource();
-        effectsMenu.setText(item.getText());
         switch (item.getId()){
             case "disRMI":
                 mainClrPkr.setVisible(false);
@@ -180,5 +182,91 @@ public class EffectsController implements Initializable {
         }
 
         return effectsSet;
+    }
+    /**
+     * Restore from config file.
+     * */
+    public void setConfig(HashMap<String, Byte> effectConfig){
+        int sliderVal;
+        switch (LoEffects.values()[effectConfig.get("EFFECT")]){
+            case DISABLE:
+                disRMI.fire();
+                effectsToggleGrp.selectToggle(disRMI);
+                break;
+            case CONSTANT_COLOR:
+                constRMI.fire();
+                effectsToggleGrp.selectToggle(constRMI);
+                mainClrPkr.setValue(Color.color(uByteToDoubleClr(effectConfig.get("RED")), uByteToDoubleClr(effectConfig.get("GREEN")), uByteToDoubleClr(effectConfig.get("BLUE"))));
+                break;
+            case BREATH:
+                breathRMI.fire();
+                effectsToggleGrp.selectToggle(breathRMI);
+                mainClrPkr.setValue(Color.color(uByteToDoubleClr(effectConfig.get("RED")), uByteToDoubleClr(effectConfig.get("GREEN")), uByteToDoubleClr(effectConfig.get("BLUE"))));
+                sliderVal = concatInt(effectConfig.get("TIME_HIGH"), effectConfig.get("TIME_LOW"));
+                mainSlide.setValue(sliderVal);
+                break;
+            case CIRCLES_ON_PRESS:
+                circlesOnPressRMI.fire();
+                effectsToggleGrp.selectToggle(circlesOnPressRMI);
+                mainClrPkr.setValue(Color.color(uByteToDoubleClr(effectConfig.get("RED")), uByteToDoubleClr(effectConfig.get("GREEN")), uByteToDoubleClr(effectConfig.get("BLUE"))));
+                sliderVal = concatInt((byte) 0, effectConfig.get("TIME_LOW"));
+                mainSlide.setValue(sliderVal);
+                break;
+            case CYCLE:
+                cycleRMI.fire();
+                effectsToggleGrp.selectToggle(cycleRMI);
+                sliderVal = concatInt(effectConfig.get("TIME_HIGH"), effectConfig.get("TIME_LOW"));
+                mainSlide.setValue(sliderVal);
+                break;
+            case WAVE_HORIZONTAL_FRW:
+                hWaveFrwRMI.fire();
+                effectsToggleGrp.selectToggle(hWaveFrwRMI);
+                sliderVal = concatInt(effectConfig.get("TIME_HIGH"), effectConfig.get("TIME_LOW"));
+                mainSlide.setValue(sliderVal);
+                break;
+            case WAVE_VERTICAL_FRW:
+                vWaveFrwRMI.fire();
+                effectsToggleGrp.selectToggle(vWaveFrwRMI);
+                sliderVal = concatInt(effectConfig.get("TIME_HIGH"), effectConfig.get("TIME_LOW"));
+                mainSlide.setValue(sliderVal);
+                break;
+            case WAVE_CENTER_TO_EDGE:
+                cntrToEdgWaveRMI.fire();
+                effectsToggleGrp.selectToggle(cntrToEdgWaveRMI);
+                sliderVal = concatInt(effectConfig.get("TIME_HIGH"), effectConfig.get("TIME_LOW"));
+                mainSlide.setValue(sliderVal);
+                break;
+            case WAVE_HORIZONTAL_BKW:
+                hWaveBkwRMI.fire();
+                effectsToggleGrp.selectToggle(hWaveBkwRMI);
+                sliderVal = concatInt(effectConfig.get("TIME_HIGH"), effectConfig.get("TIME_LOW"));
+                mainSlide.setValue(sliderVal);
+                break;
+            case WAVE_VERTICAL_BKW:
+                vWaveBkwRMI.fire();
+                effectsToggleGrp.selectToggle(vWaveBkwRMI);
+                sliderVal = concatInt(effectConfig.get("TIME_HIGH"), effectConfig.get("TIME_LOW"));
+                mainSlide.setValue(sliderVal);
+                break;
+            case WAVE_EDGE_TO_CENTER:
+                edgToCntrWaveRMI.fire();
+                effectsToggleGrp.selectToggle(edgToCntrWaveRMI);
+                sliderVal = concatInt(effectConfig.get("TIME_HIGH"), effectConfig.get("TIME_LOW"));
+                mainSlide.setValue(sliderVal);
+                
+        }
+    }
+    /**
+     * Since we widely use byte as representation of the Red/Green/Blue, this will convert byte to double < 1.
+     * @return double value of the color
+     * */
+    private double uByteToDoubleClr(byte b){
+        return Byte.toUnsignedInt(b)/255.0;
+    }
+    /**
+     * Assemble int value of the two bytes
+     * */
+    private int concatInt(byte hi, byte lo){
+        return ByteBuffer.wrap(new byte[]{0x00, 0x00, hi, lo}).getInt();
     }
 }

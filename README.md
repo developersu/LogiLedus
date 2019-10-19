@@ -13,6 +13,7 @@ LogiLed is a Logitech G513 Carbon GUI driver for adjusting backlight and effects
 #### Used libraries & resources
 * [OpenJFX](https://wiki.openjdk.java.net/display/OpenJFX/Main)
 * [usb4java](https://mvnrepository.com/artifact/org.usb4java/usb4java)
+* [Jackson](https://github.com/FasterXML/jackson)
 * Few icons taken from: [materialdesignicons.com](http://materialdesignicons.com/)
 * Special thanks to pioneers and superstars who created, contributed and maintaining [g810-led](https://github.com/MatMoul/g810-led) project!
 
@@ -55,7 +56,12 @@ Want to support development? Make a donation* (see below):
 #### TODO
 
 * [x] Tray support
-* [ ] Configuration files support
+    * [ ] tray icon size checks
+* [x] Configuration files support
 * [ ] Settings
+    * [ ] Tray icon settings
+    * [ ] Autoload
 * [ ] Headless mode (CLI)
+* [ ] Fix UI
+    * [ ] Add opened file name to info pane
 * [ ] Dark theme 

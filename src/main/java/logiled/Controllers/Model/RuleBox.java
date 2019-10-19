@@ -1,4 +1,4 @@
-package logiled.Controllers;
+package logiled.Controllers.Model;
 
 import javafx.geometry.Insets;
 import javafx.geometry.Orientation;
@@ -8,17 +8,18 @@ import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Priority;
 import javafx.scene.paint.Color;
+import logiled.Controllers.Helpers.LoCodepage;
 
 import java.util.*;
 
-class RuleBox extends HBox {   // todo: add class to selected toggle user data; provide interface to add buttons to selected toggle
+public class RuleBox extends HBox {   // todo: add class to selected toggle user data; provide interface to add buttons to selected toggle
 
     private final static ToggleGroup radioGroup = new ToggleGroup();
 
     /**
      * Get object (rule) that is currently selected
      * */
-    static RuleBox getSelected(){
+    public static RuleBox getSelected(){
         Toggle selectedToggle;
         if ((selectedToggle = radioGroup.getSelectedToggle()) == null)
             return null;
@@ -28,7 +29,7 @@ class RuleBox extends HBox {   // todo: add class to selected toggle user data; 
      * Select rule
      * @param box : the rule that has to be selected.
      * */
-    static void select(RuleBox box){
+    public static void select(RuleBox box){
         box.radBtn.setSelected(true);
     }
 
@@ -36,7 +37,37 @@ class RuleBox extends HBox {   // todo: add class to selected toggle user data; 
     private final ColorPicker colorPicker;
     private final RadioButton radBtn;
 
-    RuleBox(){
+    /**
+     * Add box and fulfill it (used when restoring from saved config-file)
+     * */
+    public RuleBox(byte red, byte green, byte blue, List<Button> rlBttnsLst){
+        this();
+        colorPicker.setValue(Color.color(Byte.toUnsignedInt(red)/255.0,
+                                        Byte.toUnsignedInt(green)/255.0,
+                                        Byte.toUnsignedInt(blue)/255.0));
+        for (Button keyBtn: rlBttnsLst){
+            keyBtn.setDisable(true);
+
+            keyBtn.setStyle(
+                    String.format(".button:disabled {-fx-background-color: #bdf7ff; -fx-opacity: 1.0; -fx-text-fill: #%02x%02x%02x; -fx-border-color: #%02x%02x%02x;}",
+                            red, green, blue,
+                            red, green, blue)
+            );
+            Button key = new Button(keyBtn.getText());    // Set same name
+            key.setMnemonicParsing(false);  // don't wipe underscore from UI
+            key.setUserData(new Object[] {keyBtn, keyBtn.getId()}); // Store button-'patent' and 'FX ID'
+            key.setOnAction(ActionEvent->{
+                keyBtn.setStyle("");
+                flowPaneBox.getChildren().remove(key);
+                keyBtn.setDisable(false);
+            });
+            flowPaneBox.getChildren().add(key);
+        }
+    }
+    /**
+     * Add new typical box (creates on button click)
+     * */
+    public RuleBox(){
         super();
         Insets insets = new Insets(3.0, 3.0, 3.0, 3.0);
         // Radio button for selecting rule
@@ -73,7 +104,7 @@ class RuleBox extends HBox {   // todo: add class to selected toggle user data; 
     /**
      * Prepare this object to be deleted: release all buttons used etc.
      * */
-    void wipe(){
+    public void wipe(){
         for (Node node : flowPaneBox.getChildren()) {
             Button key = (Button) ((Object[]) node.getUserData())[0];
             key.setStyle("");
@@ -83,7 +114,7 @@ class RuleBox extends HBox {   // todo: add class to selected toggle user data; 
     /**
      * Add button to UI (appears for current rule)
      * */
-    void addKey(Button keyBtn){
+    public void addKey(Button keyBtn){
         keyBtn.setDisable(true);
 
         keyBtn.setStyle(
@@ -108,7 +139,7 @@ class RuleBox extends HBox {   // todo: add class to selected toggle user data; 
     /**
      * Get information about this rule (keys)
      * */
-    byte[][] getKeyCodes(){
+    public byte[][] getKeyCodes(){
         final List<byte[]> keysList = new ArrayList<>();
 
         final byte red   = (byte) (colorPicker.getValue().getRed()*255);
@@ -136,7 +167,7 @@ class RuleBox extends HBox {   // todo: add class to selected toggle user data; 
     /**
      * Get information about this rule (Leds)
      * */
-    byte[][] getLedCodes(){
+    public byte[][] getLedCodes(){
         final List<byte[]> ledList = new ArrayList<>();
 
         final byte red   = (byte) (colorPicker.getValue().getRed()*255);
@@ -160,5 +191,27 @@ class RuleBox extends HBox {   // todo: add class to selected toggle user data; 
             return null;
 
         return ledList.toArray(new byte[0][]);
+    }
+
+    public LoRule getLoRule(){
+        if (flowPaneBox.getChildren().size() == 0)
+            return null;
+        List<String> codes = new ArrayList<>();
+
+        for (int i = 0; i < flowPaneBox.getChildren().size(); i++) {
+            Object[] pair = (Object[]) flowPaneBox.getChildren().get(i).getUserData();
+            String id = (String) pair[1];
+            codes.add(id);
+        }
+
+        if (codes.size() == 0)
+            return null;
+
+        return new LoRule(
+                (byte) (colorPicker.getValue().getRed()*255),
+                (byte) (colorPicker.getValue().getGreen()*255),
+                (byte) (colorPicker.getValue().getBlue()*255),
+                codes.toArray(new String[0])
+        );
     }
 }

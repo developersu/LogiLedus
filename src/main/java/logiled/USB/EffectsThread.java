@@ -1,6 +1,6 @@
 package logiled.USB;
 
-import logiled.Controllers.LoEffects;
+import logiled.Controllers.Helpers.LoEffects;
 import logiled.MessagesConsumer;
 
 import java.util.HashMap;

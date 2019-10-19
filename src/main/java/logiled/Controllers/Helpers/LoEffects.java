@@ -1,4 +1,4 @@
-package logiled.Controllers;
+package logiled.Controllers.Helpers;
 
 public enum LoEffects {
     DISABLE             ((byte) 0),

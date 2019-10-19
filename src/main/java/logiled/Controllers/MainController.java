@@ -1,15 +1,22 @@
 package logiled.Controllers;
 
-import javafx.event.EventHandler;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.control.MenuItem;
+import javafx.stage.FileChooser;
 import logiled.About.AboutWindow;
 import logiled.MessagesConsumer;
+import logiled.Config.SettingsFileFormat;
+import logiled.ServiceWindow;
 import logiled.USB.EffectsThread;
 import logiled.USB.GameModeThread;
 import logiled.USB.KeyLedThread;
 
+import java.io.*;
 import java.net.URL;
 import java.util.HashMap;
 import java.util.List;
@@ -32,7 +39,7 @@ public class MainController implements Initializable {
     private Tab KeyLedTab, EffectsTab;
     */
     @FXML
-    private Button applyBtn;
+    private Button applyBtn, openBtn, saveBtn, saveAsBtn;
 
     @FXML
     private Label infoLbl;
@@ -40,13 +47,23 @@ public class MainController implements Initializable {
     @FXML
     private MenuItem aboutMenuItem;
 
-    // TODO: add block & release-button function
+    private ResourceBundle rb;
+
+    private String recentPath;
+    private File openedConfigFile;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        this.rb = resourceBundle;
+
         aboutMenuItem.setOnAction(actionEvent -> new AboutWindow());
         MessagesConsumer.getInstance().setInstance(infoLbl);
         MessagesConsumer.getInstance().start();
+
+        openBtn.setOnAction(actionEvent -> openConfig());
+
+        saveBtn.setOnAction(ActionEvent -> saveConfig(false));
+        saveAsBtn.setOnAction(ActionEvent -> saveConfig(true));
 
         applyBtn.setOnAction(actionEvent -> {
             if (MainTabPane.getSelectionModel().getSelectedItem().getId().equals("KeyLedTab")) {
@@ -77,5 +94,136 @@ public class MainController implements Initializable {
                 commThread.start();
             }
         });
+    }
+
+    /**
+     * For 'Open' button
+     * */
+    private void openConfig(){
+        File congigFile = getOpenFileChooser();
+        if (congigFile == null)
+            return;
+        else
+            recentPath = congigFile.getParentFile().getAbsolutePath();
+        ObjectMapper mapper = new ObjectMapper();
+        SettingsFileFormat setup;
+        try{
+            setup = mapper.readerFor(SettingsFileFormat.class).readValue(new FileInputStream(congigFile));
+
+            KeysLedsController.setConfig(setup.getKeyLedRule());
+            EffectsController.setConfig(setup.getEffectHumanReadable());
+            GameModeController.setConfig(setup.getGameModeKeyCodes());
+        }
+        catch (IOException e){
+            ServiceWindow.getErrorNotification(rb.getString("error_any_title"), rb.getString("error_any_body"));
+            e.printStackTrace();
+        }
+    }
+
+    /**
+     * Show File Chooser for saving file
+     * @return file that has to be written.
+     * */
+    private File getOpenFileChooser(){
+        FileChooser fileChooser = new FileChooser();
+        fileChooser.setTitle(rb.getString("btn_save_as"));
+        fileChooser.getExtensionFilters().add(new FileChooser.ExtensionFilter("LogiLed config (*.lcfg)", "*.lcfg"));
+
+        if (recentPath != null){
+            File stat = new File(recentPath);
+            if (! stat.exists())
+                recentPath = System.getProperty("user.home");
+        }
+        else
+            recentPath = System.getProperty("user.home");
+
+        fileChooser.setInitialDirectory(new File(recentPath));
+
+        return fileChooser.showOpenDialog(applyBtn.getScene().getWindow());
+    }
+    /**
+     * For 'Save' and 'Save As' buttons
+     * */
+    private void saveConfig(boolean isSaveAs){
+        SettingsFileFormat fileFormat = new SettingsFileFormat();
+        fileFormat.setKeyLedRule(KeysLedsController.getInternalRules());
+        fileFormat.setEffectHumanReadable(EffectsController.getEffect());
+        fileFormat.setGameModeKeyCodes(GameModeController.getInternalKeySet());
+        File tempFile;
+        if (isSaveAs) {
+            if ((tempFile = getSaveFileChooser()) == null)  // In case nothing user clicked 'Cancel button' just leave this
+                return;
+            else
+                openedConfigFile = tempFile;    // Because: if we already have config loaded, we won't loose it with this hint.
+        }
+        else {
+            // If nothing opened then show file chooser
+            if (openedConfigFile == null){
+                if ((openedConfigFile = getSaveFileChooser()) == null)  // In case nothing user clicked 'Cancel button' just leave this
+                    return;
+                else
+                    recentPath = openedConfigFile.getParentFile().getAbsolutePath();
+            }
+        }
+        // Create JSON magic
+        ObjectMapper mapper = new ObjectMapper();
+
+        try {
+            mapper.writerWithDefaultPrettyPrinter().writeValue(new FileOutputStream(openedConfigFile), fileFormat);
+            infoLbl.setText(rb.getString("info_file_saved"));
+        }
+        catch (Exception e){
+            ServiceWindow.getErrorNotification(rb.getString("error_any_title"), rb.getString("error_any_body"));
+            infoLbl.setText(rb.getString("info_file_not_saved"));
+            e.printStackTrace();
+        }
+/*
+            try{
+
+                // DEBUG
+                String jsonResult = new ObjectMapper().writerWithDefaultPrettyPrinter().writeValueAsString(fileFormat);
+                //System.out.println(jsonResult);
+
+                ObjectMapper mapper = new ObjectMapper();
+                SettingsFileFormat ff = mapper.readerFor(SettingsFileFormat.class).readValue(jsonResult);
+
+                System.out.println("FF getKeyLedRule: ");
+                for (LoRule r: ff.getKeyLedRule()){
+                    System.out.println(r.getRed()+" "+r.getGreen()+" "+r.getBlue()+" ");
+                    for (String s: r.getKeyLedCode())
+                        System.out.print(s+" ");
+                    System.out.println();
+                }
+                System.out.println("FF getEffectHumanReadable: ");
+                for (Map.Entry<String, Byte> e : ff.getEffectHumanReadable().entrySet()){
+                    System.out.println(e.getKey()+" "+e.getValue());
+                }
+                System.out.println("FF getGameModeKeyCodes: ");
+                for (String s: ff.getGameModeKeyCodes())
+                    System.out.println(s);
+            }
+            catch (Exception e) {
+                e.printStackTrace();
+            }
+ */
+    }
+
+    /**
+     * Show File Chooser for saving file
+     * @return file that has to be written.
+     * */
+    private File getSaveFileChooser(){
+        FileChooser fileChooser = new FileChooser();
+        fileChooser.setTitle(rb.getString("btn_save_as"));
+        fileChooser.setInitialFileName("keyboard settings.lcfg");
+        fileChooser.getExtensionFilters().add(new FileChooser.ExtensionFilter("LogiLed config (*.lcfg)", "*.lcfg"));
+
+        if (recentPath != null){
+            File stat = new File(recentPath);
+            if (! stat.exists())
+                recentPath = System.getProperty("user.home");
+        }
+
+        return fileChooser.showSaveDialog(applyBtn.getScene().getWindow());
     }
 }

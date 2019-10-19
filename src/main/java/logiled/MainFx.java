@@ -16,7 +16,7 @@ import java.util.Locale;
 import java.util.ResourceBundle;
 
 public class MainFx extends Application {
-    public static final String appVersion = "v0.3";
+    public static final String appVersion = "v0.4";
 
     private static boolean traySupport = true;
 
@@ -77,7 +77,7 @@ public class MainFx extends Application {
 
             SystemTray tray = SystemTray.getSystemTray();
 
-            TrayIcon trayIcon = new TrayIcon(ImageIO.read(getClass().getResourceAsStream("/ico/appIcon_32.png")));
+            TrayIcon trayIcon = new TrayIcon(ImageIO.read(getClass().getResourceAsStream("/ico/appIcon_24.png")));
 
             trayIcon.addActionListener(ActionEvent -> Platform.runLater(this::showStage));
 
