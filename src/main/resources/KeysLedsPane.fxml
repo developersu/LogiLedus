@@ -339,12 +339,12 @@
                               <Button fx:id="k_num_plus" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#anyKeyAction" prefHeight="93.0" prefWidth="50.0" styleClass="button_keycap" text="+" GridPane.columnIndex="3" GridPane.rowIndex="2" GridPane.rowSpan="2" />
                               <Button fx:id="k_num_enter" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#anyKeyAction" prefHeight="93.0" prefWidth="50.0" styleClass="button_keycap" text="↵" GridPane.columnIndex="3" GridPane.rowIndex="4" GridPane.rowSpan="2" />
                               <Button fx:id="k_num_period" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#anyKeyAction" prefHeight="45.0" prefWidth="50.0" styleClass="button_keycap" text="," GridPane.columnIndex="2" GridPane.rowIndex="5" />
-                        <Button fx:id="l_caps" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#anyKeyAction" prefHeight="26.0" prefWidth="50.0" text="LED C">
+                        <Button fx:id="l_caps" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#anyKeyAction" prefHeight="26.0" prefWidth="50.0" styleClass="button_keycap" text="LED C">
                            <font>
                               <Font size="10.0" />
                            </font>
                         </Button>
-                        <Button fx:id="l_game" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#anyKeyAction" prefHeight="26.0" prefWidth="50.0" text="LED G" GridPane.columnIndex="1">
+                        <Button fx:id="l_game" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#anyKeyAction" prefHeight="26.0" prefWidth="50.0" styleClass="button_keycap" text="LED G" GridPane.columnIndex="1">
                            <font>
                               <Font size="10.0" />
                            </font>

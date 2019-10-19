@@ -62,6 +62,6 @@ Want to support development? Make a donation* (see below):
     * [ ] Tray icon settings
     * [ ] Autoload
 * [ ] Headless mode (CLI)
-* [ ] Fix UI
+* [x] Fix UI
     * [ ] Add opened file name to info pane
 * [ ] Dark theme 

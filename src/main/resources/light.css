@@ -5,7 +5,7 @@
 .button SVGPath{
     -fx-fill: #141414;
 }
-.button, .toggle-button {
+.button, .toggle-button, .menu-button {
     -fx-background-color: #fefefe;
     -fx-background-insets: 0 0 0 0, 0, 1, 2;
     -fx-background-radius: 2;
@@ -15,7 +15,7 @@
     -fx-text-fill: #2c2c2c;
     //-fx-effect: dropshadow(three-pass-box, #dadada, 2, 0, 0, 0);
 }
-.button:hover, .choice-box:hover, .button:focused:hover, .choice-box:focused:hover, .toggle-button:hover, .toggle-button:focused:hover{
+.menu-button:hover, .button:hover, .choice-box:hover, .menu-button:focused:hover, .button:focused:hover, .choice-box:focused:hover, .toggle-button:hover, .toggle-button:focused:hover{
     -fx-background-color: #fefefe;
     -fx-background-insets: 0 0 0 0, 0, 1, 2;
     -fx-background-radius: 2;
@@ -25,7 +25,7 @@
     -fx-text-fill: #2c2c2c;
     //-fx-effect: dropshadow(three-pass-box, #009bca, 2, 0, 0, 0);
 }
-.button:focused, .choice-box:focused, .toggle-button:focused{
+.menu-button:focused, .button:focused, .choice-box:focused, .toggle-button:focused{
     -fx-background-color: #dadada;
     -fx-background-insets: 0 0 0 0, 0, 1, 2;
     -fx-background-radius: 2;
@@ -36,7 +36,7 @@
     //-fx-effect: dropshadow(three-pass-box, #dadada, 2, 0, 0, 0);
 }
 
-.button:pressed, .button:pressed:hover, .toggle-button:pressed, .toggle-button:pressed:hover{
+.menu-button:pressed, .button:pressed, .menu-button:pressed:hover, .button:pressed:hover, .toggle-button:pressed, .toggle-button:pressed:hover{
     -fx-background-color: #fefefe;
     -fx-background-insets: 0 0 0 0, 0, 1, 2;
     -fx-background-radius: 2;
@@ -225,7 +225,7 @@
     -fx-faint-focus-color: transparent;
     -fx-border-radius: 0 0 0 0;
     -fx-border-width: 3 0 0 0;
-    -fx-border-color: #289de8;
+    -fx-border-color: #40b9bb; /* #289de8; */
 }
 
 .tab-pane > .tab-header-area {
@@ -271,9 +271,11 @@
     -fx-border-color: #b5b5b5;
     -fx-border-width: 1 0 0 0;
 }
-
+/* -========================== header pane =====================-  */
 .header {
-       -fx-background-image: url("pttrn.png");
-       -fx-background-position: center;
-       -fx-background-repeat: repeat;
+   -fx-background-image: url("pttrn.png");
+   -fx-background-position: center;
+   -fx-background-repeat: repeat;
+   -fx-border-color: #b5b5b5;
+   -fx-border-width: 0 0 1 0;
 }
