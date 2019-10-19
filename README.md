@@ -6,6 +6,10 @@
 
 LogiLed is a Logitech G513 Carbon GUI driver for adjusting backlight and effects.
 
+![Screenshot 1](https://live.staticflickr.com/65535/48925778631_57bb44c8fc_o.png)
+![Screenshot 2](https://live.staticflickr.com/65535/48925778596_ccbe7d9212_o.png)
+![Screenshot 3](https://live.staticflickr.com/65535/48925974837_c4a183a0d5_o.png)
+
 #### License
 
 [GNU General Public License v3](https://www.gnu.org/licenses/gpl-3.0.html)

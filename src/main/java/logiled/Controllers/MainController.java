@@ -99,19 +99,21 @@ public class MainController implements Initializable {
      * For 'Open' button
      * */
     private void openConfig(){
-        File congigFile = getOpenFileChooser();
-        if (congigFile == null)
+        File configFile = getOpenFileChooser();
+        if (configFile == null)
             return;
         else
-            recentPath = congigFile.getParentFile().getAbsolutePath();
+            recentPath = configFile.getParentFile().getAbsolutePath();
         ObjectMapper mapper = new ObjectMapper();
         SettingsFileFormat setup;
         try{
-            setup = mapper.readerFor(SettingsFileFormat.class).readValue(new FileInputStream(congigFile));
+            setup = mapper.readerFor(SettingsFileFormat.class).readValue(new FileInputStream(configFile));
 
             KeysLedsController.setConfig(setup.getKeyLedRule());
             EffectsController.setConfig(setup.getEffectHumanReadable());
             GameModeController.setConfig(setup.getGameModeKeyCodes());
+
+            openedConfigFile = configFile;
         }
         catch (IOException e){
             ServiceWindow.getErrorNotification(rb.getString("error_any_title"), rb.getString("error_any_body"));
