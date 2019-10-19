@@ -2,59 +2,126 @@
     -fx-background: #ebebeb;
 }
 /* -======================== Buttons =====================- */
+.button SVGPath{
+    -fx-fill: #141414;
+}
 .button, .toggle-button {
     -fx-background-color: #fefefe;
-    -fx-border-color: #fefefe;
-    -fx-border-radius: 3;
+    -fx-background-insets: 0 0 0 0, 0, 1, 2;
+    -fx-background-radius: 2;
+    -fx-border-color: #bebebe; /* #d7fecf; */
+    -fx-border-radius: 2;
     -fx-border-width: 2;
     -fx-text-fill: #2c2c2c;
-    -fx-effect: dropshadow(three-pass-box, #cccccc, 2, 0, 0, 0);
+    //-fx-effect: dropshadow(three-pass-box, #dadada, 2, 0, 0, 0);
 }
 .button:hover, .choice-box:hover, .button:focused:hover, .choice-box:focused:hover, .toggle-button:hover, .toggle-button:focused:hover{
     -fx-background-color: #fefefe;
-    -fx-border-color: #00caca;
-    -fx-border-radius: 3;
+    -fx-background-insets: 0 0 0 0, 0, 1, 2;
+    -fx-background-radius: 2;
+    -fx-border-color: #009bca;
+    -fx-border-radius: 2;
     -fx-border-width: 2;
     -fx-text-fill: #2c2c2c;
-    -fx-effect: dropshadow(three-pass-box, #00caca, 2, 0, 0, 0);
+    //-fx-effect: dropshadow(three-pass-box, #009bca, 2, 0, 0, 0);
 }
 .button:focused, .choice-box:focused, .toggle-button:focused{
-    -fx-background-color: #cccccc;
-    -fx-border-color: #cccccc;
-    -fx-border-radius: 3;
+    -fx-background-color: #dadada;
+    -fx-background-insets: 0 0 0 0, 0, 1, 2;
+    -fx-background-radius: 2;
+    -fx-border-color: #8f8f8f;
+    -fx-border-radius: 2;
     -fx-border-width: 2;
     -fx-text-fill: #2c2c2c;
-    -fx-effect: dropshadow(three-pass-box, #cccccc, 2, 0, 0, 0);
+    //-fx-effect: dropshadow(three-pass-box, #dadada, 2, 0, 0, 0);
 }
 
 .button:pressed, .button:pressed:hover, .toggle-button:pressed, .toggle-button:pressed:hover{
     -fx-background-color: #fefefe;
+    -fx-background-insets: 0 0 0 0, 0, 1, 2;
+    -fx-background-radius: 2;
     -fx-border-color: #e82382;
-    -fx-border-radius: 3;
+    -fx-border-radius: 2;
     -fx-border-width: 2;
     -fx-text-fill: #2c2c2c;
-    -fx-effect: dropshadow(three-pass-box, #e82382, 2, 0, 0, 0);
+    //-fx-effect: dropshadow(three-pass-box, #e82382, 2, 0, 0, 0);
 }
 
 .toggle-button:selected, .toggle-button:selected:hover{
     -fx-background-color: #e1feeb;
+    -fx-background-insets: 0 0 0 0, 0, 1, 2;
+    -fx-background-radius: 2;
     -fx-border-color: #ccfed1;
-    -fx-border-radius: 3;
+    -fx-border-radius: 2;
     -fx-border-width: 2;
     -fx-text-fill: #2c2c2c;
-    -fx-effect: dropshadow(three-pass-box, #cccccc, 2, 0, 0, 0);
+    //-fx-effect: dropshadow(three-pass-box, #dadada, 2, 0, 0, 0);
+}
+/* -======================== Buttons keys =====================- */
+.button_keycap, .toggle-button_keycap {
+    -fx-background-color: #fefefe;
+    -fx-background-radius: 8;
+    -fx-background-insets: 0 0 0 0, 0, 1, 2;
+    -fx-border-color: #cfcfcf;
+    -fx-border-radius: 8;
+    -fx-border-width: 1;
+    -fx-text-fill: #2c2c2c;
+    -fx-effect: dropshadow(three-pass-box, #8f8f8f, 1, 0, 0, 0);
+}
+.button_keycap:hover, .button_keycap:focused:hover, .toggle-button_keycap:hover, .toggle-button_keycap:focused:hover{
+    -fx-background-color: #fefefe;
+    -fx-background-insets: 0 0 0 0, 0, 1, 2;
+    -fx-border-color: #009bca;
+    -fx-border-radius: 8;
+    -fx-background-radius: 8;
+    -fx-border-width: 1;
+    -fx-text-fill: #2c2c2c;
+    -fx-effect: dropshadow(three-pass-box, #009bca, 2, 0, 0, 0);
+}
+.button_keycap:focused, .toggle-button_keycap:focused{
+    -fx-background-color: #dadada;
+    -fx-background-insets: 0 0 0 0, 0, 1, 2;
+    -fx-border-color: #8f8f8f;
+    -fx-border-radius: 8;
+    -fx-background-radius: 8;
+    -fx-border-width: 1;
+    -fx-text-fill: #2c2c2c;
+    -fx-effect: dropshadow(three-pass-box, #8f8f8f, 1, 0, 0, 0);
+}
+
+.button_keycap:pressed, .button_keycap:pressed:hover, .toggle-button_keycap:pressed, .toggle-button_keycap:pressed:hover{
+    -fx-background-color: #fefefe;
+    -fx-background-insets: 0 0 0 0, 0, 1, 2;
+    -fx-border-color: #e82382;
+    -fx-border-radius: 8;
+    -fx-background-radius: 8;
+    -fx-border-width: 1;
+    -fx-text-fill: #2c2c2c;
+    -fx-effect: dropshadow(three-pass-box, #e82382, 2, 0, 0, 0);
+}
+
+.toggle-button_keycap:selected, .toggle-button_keycap:selected:hover{
+    -fx-background-color: #e1feeb;
+    -fx-background-insets: 0 0 0 0, 0, 1, 2;
+    -fx-border-color: #ccfed1;
+    -fx-border-radius: 8;
+    -fx-background-radius: 8;
+    -fx-border-width: 1;
+    -fx-text-fill: #2c2c2c;
+    -fx-effect: none;
 }
 
 .always_off_button:disabled, .always_off_button:disabled:selected {
     -fx-opacity: 1.0;
     -fx-background-color: #fee9f8;
-    -fx-border-color: #fed6fe;
-    -fx-border-radius: 3;
-    -fx-border-width: 2;
+    -fx-background-insets: 0 0 0 0, 0, 1, 2;
+    -fx-border-color: #f1cbf1;
+    -fx-border-radius: 8;
+    -fx-background-radius: 8;
+    -fx-border-width: 1;
     -fx-text-fill: #2c2c2c;
-    -fx-effect: dropshadow(three-pass-box, #cccccc, 2, 0, 0, 0);
+    -fx-effect: dropshadow(three-pass-box, #f1cbf1, 1, 0, 0, 0);
 }
-
 /* -======================== TextArea =====================- */
 .text-area{
     -fx-background-color: transparent;
@@ -174,55 +241,6 @@
 .tab-pane > .tab-header-area > .headers-region > .tab {
     -fx-padding: 10;
 }
-/* -=========================== TABLE ======================- */
-.table-view {
-    -fx-background-color: #fefefe;
-    -fx-background-image: url(app_logo.png);
-    -fx-background-position: center;
-    -fx-background-repeat: no-repeat;
-    -fx-background-radius: 3;
-    -fx-border-color: #06b9bb;
-    -fx-border-radius: 3;
-    -fx-border-width: 2;
-}
-.table-view .arrow {
-   -fx-mark-color: #2c2c2c ;
-}
-.table-view .column-header {
-    -fx-background-color: transparent;
-    -fx-border-width: 0 1 2 0;
-    -fx-border-color: #b0b0b0;
-}
-.table-view .column-header-background .label{
-    -fx-background-color: transparent;
-    -fx-text-fill: #2c2c2c;
-}
-.table-view .column-header-background, .table-view .filler{
-    -fx-background-color: #fefefe;
-}
-
-.table-view .table-cell{
-    -fx-text-fill: #2c2c2c;
-}
-.table-row-cell, .table-row-cell:filled:selected, .table-row-cell:selected{
-    -fx-background-color: -fx-table-cell-border-color, #d3fffd;
-    -fx-background-insets: 0, 0 0 1 0;
-    -fx-padding: 0.0em; /* 0 */
-    -fx-table-cell-border-color: #b0b0b0;
-}
-.table-row-cell .text, .table-row-cell:odd .text {
-    -fx-fill: #2c2c2c;
-}
-.table-row-cell:filled:selected .text, .table-row-cell:odd:filled:selected .text{
-    -fx-fill: #2c2c2c;
-    -fx-font-weight: bold
-}
-.table-row-cell:odd, .table-row-cell:odd:filled:selected, .table-row-cell:odd:selected{
-    -fx-background-color: -fx-table-cell-border-color, #fefefe;
-    -fx-background-insets: 0, 0 0 1 0;
-    -fx-padding: 0.0em; /* 0 */
-    -fx-table-cell-border-color: #b0b0b0;
-}
 /* -========================== Context menu =====================- */
 .context-menu {
   -fx-background-color: #fefefe;
@@ -250,12 +268,12 @@
 /* -========================== footer pane =====================-  */
 .footer{
     -fx-background-color: #ffffff;
+    -fx-border-color: #b5b5b5;
+    -fx-border-width: 1 0 0 0;
 }
 
-
-.regionRemove{
-    -fx-shape: "M12,2C17.53,2 22,6.47 22,12C22,17.53 17.53,22 12,22C6.47,22 2,17.53 2,12C2,6.47 6.47,2 12,2M15.59,7L12,10.59L8.41,7L7,8.41L10.59,12L7,15.59L8.41,17L12,13.41L15.59,17L17,15.59L13.41,12L17,8.41L15.59,7Z";
-    -fx-background-color: #830002;
-    -fx-min-height: 15;
-    -fx-min-width: 15;
+.header {
+       -fx-background-image: url("pttrn.png");
+       -fx-background-position: center;
+       -fx-background-repeat: repeat;
 }

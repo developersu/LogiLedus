@@ -39,13 +39,10 @@ public class MainController implements Initializable {
     private Tab KeyLedTab, EffectsTab;
     */
     @FXML
-    private Button applyBtn, openBtn, saveBtn, saveAsBtn;
+    private Button applyBtn, openBtn, saveBtn, saveAsBtn, aboutBtn;
 
     @FXML
     private Label infoLbl;
-
-    @FXML
-    private MenuItem aboutMenuItem;
 
     private ResourceBundle rb;
 
@@ -56,7 +53,7 @@ public class MainController implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
         this.rb = resourceBundle;
 
-        aboutMenuItem.setOnAction(actionEvent -> new AboutWindow());
+        aboutBtn.setOnAction(actionEvent -> new AboutWindow());
         MessagesConsumer.getInstance().setInstance(infoLbl);
         MessagesConsumer.getInstance().start();
 
