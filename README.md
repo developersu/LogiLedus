@@ -1,14 +1,14 @@
 # LogiLedus
 
-![License](https://img.shields.io/badge/License-GPLv3-blue.svg) [![Releases](https://img.shields.io/github/downloads/developersu/LogiLed/total.svg)]() [![LatestVer](https://img.shields.io/github/release/developersu/LogiLed.svg)]()
+![License](https://img.shields.io/badge/License-GPLv3-blue.svg) [![Releases](https://img.shields.io/github/downloads/developersu/LogiLedus/total.svg)]() [![LatestVer](https://img.shields.io/github/release/developersu/LogiLedus.svg)]()
 
 [Support author](#support-this-app)
 
 LogiLedus is a Logitech G513 Carbon GUI driver for adjusting backlight and effects.
 
-![Screenshot 1](https://live.staticflickr.com/65535/48925778631_57bb44c8fc_o.png)
-![Screenshot 2](https://live.staticflickr.com/65535/48925778596_ccbe7d9212_o.png)
-![Screenshot 3](https://live.staticflickr.com/65535/48925974837_c4a183a0d5_o.png)
+![Screenshot 1](https://live.staticflickr.com/65535/48932060697_6f60cc4143_o.png)
+![Screenshot 2](https://live.staticflickr.com/65535/48931873171_b00c4fd875_o.png)
+![Screenshot 3](https://live.staticflickr.com/65535/48931332563_72de8e93ed_o.png)
 
 #### License
 
