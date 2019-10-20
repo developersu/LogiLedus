@@ -5,12 +5,12 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>loper</groupId>
-    <artifactId>LogiLed</artifactId>
+    <artifactId>LogiLedus</artifactId>
     <version>1.0-SNAPSHOT</version>
 
     <!-- <url></url> -->
     <description>
-        LogiLed is a Logitech G513 GUI driver for adjusting backlight and effects.
+        LogiLedus is a Logitech G513 GUI driver for adjusting backlight and effects.
     </description>
     <inceptionYear>2019</inceptionYear>
     <organization>
@@ -204,7 +204,7 @@
                 <configuration>
                     <archive>
                         <manifest>
-                            <mainClass>logiled.Main</mainClass>
+                            <mainClass>logiledus.Main</mainClass>
                         </manifest>
                     </archive>
                     <descriptorRefs>
