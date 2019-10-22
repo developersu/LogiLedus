@@ -1,82 +1,86 @@
 .root{
-    -fx-background: #ebebeb;
+    -fx-background: #2b2b2b;
+}
+
+.tool-bar{
+    -fx-background-color: #2b2b2b;
 }
 /* -======================== Buttons =====================- */
 .button SVGPath{
-    -fx-fill: #141414;
+    -fx-fill: #ebebeb;
 }
 .button, .toggle-button, .menu-button {
-    -fx-background-color: #fefefe;
+    -fx-background-color: #3c3f41;
     -fx-background-insets: 0 0 0 0, 0, 1, 2;
     -fx-background-radius: 2;
-    -fx-border-color: #bebebe; /* #d7fecf; */
+    -fx-border-color: #47ca60;
     -fx-border-radius: 2;
     -fx-border-width: 2;
-    -fx-text-fill: #2c2c2c;
+    -fx-text-fill: #ebebeb;
     //-fx-effect: dropshadow(three-pass-box, #dadada, 2, 0, 0, 0);
 }
 .menu-button:hover, .button:hover, .choice-box:hover, .menu-button:focused:hover, .button:focused:hover, .choice-box:focused:hover, .toggle-button:hover, .toggle-button:focused:hover{
-    -fx-background-color: #fefefe;
+    -fx-background-color: #3c3f41;
     -fx-background-insets: 0 0 0 0, 0, 1, 2;
     -fx-background-radius: 2;
-    -fx-border-color: #009bca;
+    -fx-border-color: #4a81dd;
     -fx-border-radius: 2;
     -fx-border-width: 2;
-    -fx-text-fill: #2c2c2c;
-    //-fx-effect: dropshadow(three-pass-box, #009bca, 2, 0, 0, 0);
+    -fx-text-fill: #ebebeb;
+    //-fx-effect: dropshadow(three-pass-box, #4a81dd, 2, 0, 0, 0);
 }
 .menu-button:focused, .button:focused, .choice-box:focused, .toggle-button:focused{
-    -fx-background-color: #dadada;
+    -fx-background-color: #4b4e51;
     -fx-background-insets: 0 0 0 0, 0, 1, 2;
     -fx-background-radius: 2;
-    -fx-border-color: #8f8f8f;
+    -fx-border-color: #4c7352;
     -fx-border-radius: 2;
     -fx-border-width: 2;
-    -fx-text-fill: #2c2c2c;
+    -fx-text-fill: #ebebeb;
     //-fx-effect: dropshadow(three-pass-box, #dadada, 2, 0, 0, 0);
 }
 
 .menu-button:pressed, .button:pressed, .menu-button:pressed:hover, .button:pressed:hover, .toggle-button:pressed, .toggle-button:pressed:hover{
-    -fx-background-color: #fefefe;
+    -fx-background-color: #3c3f41;
     -fx-background-insets: 0 0 0 0, 0, 1, 2;
     -fx-background-radius: 2;
     -fx-border-color: #e82382;
     -fx-border-radius: 2;
     -fx-border-width: 2;
-    -fx-text-fill: #2c2c2c;
+    -fx-text-fill: #ebebeb;
     //-fx-effect: dropshadow(three-pass-box, #e82382, 2, 0, 0, 0);
 }
 /* -======================== Buttons keys =====================- */
 .toggle-button:selected, .toggle-button:selected:hover{
-    -fx-background-color: #e1feeb;
+    -fx-background-color: #214131;
     -fx-background-insets: 0 0 0 0, 0, 1, 2;
     -fx-background-radius: 8;
     -fx-border-color: #ccfed1;
     -fx-border-radius: 8;
     -fx-border-width: 1;
-    -fx-text-fill: #2c2c2c;
-    -fx-effect: dropshadow(three-pass-box, #dadada, 2, 0, 0, 0);
+    -fx-text-fill: #ebebeb;
+    //-fx-effect: dropshadow(three-pass-box, #dadada, 2, 0, 0, 0);
 }
 
 .button_keycap, .toggle-button_keycap {
-    -fx-background-color: #fefefe;
+    -fx-background-color: #3c3f41;
     -fx-background-radius: 8;
     -fx-background-insets: 0 0 0 0, 0, 1, 2;
     -fx-border-color: #cfcfcf;
     -fx-border-radius: 8;
     -fx-border-width: 1;
-    -fx-text-fill: #2c2c2c;
+    -fx-text-fill: #ebebeb;
     -fx-effect: dropshadow(three-pass-box, #8f8f8f, 1, 0, 0, 0);
 }
 .button_keycap:hover, .button_keycap:focused:hover, .toggle-button_keycap:hover, .toggle-button_keycap:focused:hover{
-    -fx-background-color: #fefefe;
+    -fx-background-color: #3c3f41;
     -fx-background-insets: 0 0 0 0, 0, 1, 2;
-    -fx-border-color: #009bca;
+    -fx-border-color: #4a81dd;
     -fx-border-radius: 8;
     -fx-background-radius: 8;
     -fx-border-width: 1;
-    -fx-text-fill: #2c2c2c;
-    -fx-effect: dropshadow(three-pass-box, #009bca, 2, 0, 0, 0);
+    -fx-text-fill: #ebebeb;
+    -fx-effect: dropshadow(three-pass-box, #4a81dd, 2, 0, 0, 0);
 }
 .button_keycap:focused, .toggle-button_keycap:focused{
     -fx-background-color: #dadada;
@@ -85,51 +89,51 @@
     -fx-border-radius: 8;
     -fx-background-radius: 8;
     -fx-border-width: 1;
-    -fx-text-fill: #2c2c2c;
+    -fx-text-fill: #ebebeb;
     -fx-effect: dropshadow(three-pass-box, #8f8f8f, 1, 0, 0, 0);
 }
 
 .button_keycap:pressed, .button_keycap:pressed:hover, .toggle-button_keycap:pressed, .toggle-button_keycap:pressed:hover{
-    -fx-background-color: #fefefe;
+    -fx-background-color: #3c3f41;
     -fx-background-insets: 0 0 0 0, 0, 1, 2;
     -fx-border-color: #e82382;
     -fx-border-radius: 8;
     -fx-background-radius: 8;
     -fx-border-width: 1;
-    -fx-text-fill: #2c2c2c;
+    -fx-text-fill: #ebebeb;
     -fx-effect: dropshadow(three-pass-box, #e82382, 2, 0, 0, 0);
 }
 
 .toggle-button_keycap:selected, .toggle-button_keycap:selected:hover{
-    -fx-background-color: #e1feeb;
+    -fx-background-color: #214131;
     -fx-background-insets: 0 0 0 0, 0, 1, 2;
     -fx-border-color: #ccfed1;
     -fx-border-radius: 8;
     -fx-background-radius: 8;
     -fx-border-width: 1;
-    -fx-text-fill: #2c2c2c;
-    -fx-effect: dropshadow(three-pass-box, #e82382, 2, 0, 0, 0);
+    -fx-text-fill: #ebebeb;
+    -fx-effect: none;
 }
 
 .always_off_button:disabled, .always_off_button:disabled:selected {
     -fx-opacity: 1.0;
-    -fx-background-color: #fee9f8;
+    -fx-background-color: #412441;
     -fx-background-insets: 0 0 0 0, 0, 1, 2;
     -fx-border-color: #f1cbf1;
     -fx-border-radius: 8;
     -fx-background-radius: 8;
     -fx-border-width: 1;
-    -fx-text-fill: #2c2c2c;
+    -fx-text-fill: #ebebeb;
     -fx-effect: dropshadow(three-pass-box, #f1cbf1, 1, 0, 0, 0);
 }
 /* -======================== TextArea =====================- */
 .text-area{
     -fx-background-color: transparent;
-    -fx-control-inner-background: #fefefe;
+    -fx-control-inner-background: #3c3f41;
     -fx-border-color: #06b9bb;
     -fx-border-radius: 3;
     -fx-border-width: 1;
-    -fx-text-fill: #2c2c2c;
+    -fx-text-fill: #ebebeb;
 }
 
 .progress-bar {
@@ -148,10 +152,10 @@
 }
 
 .dialog-pane {
-    -fx-background-color: #fefefe;
+    -fx-background-color: #3c3f41;
 }
 .dialog-pane > .button-bar > .container{
-    -fx-background-color: #ebebeb;
+    -fx-background-color: #2b2b2b;
 }
 
 .dialog-pane > .label{
@@ -166,29 +170,29 @@
 */
 /* -======================== Choice box =========================- */
 .choice-box {
-    -fx-background-color: #fefefe;
-    -fx-border-color: #fefefe;
+    -fx-background-color: #3c3f41;
+    -fx-border-color: #3c3f41;
     -fx-border-radius: 3;
     -fx-border-width: 2;
     -fx-mark-color: #eea11e;
     -fx-effect: dropshadow(three-pass-box, #b4b4b4, 2, 0, 0, 0);
 }
 .choice-box > .label {
-    -fx-text-fill: #2c2c2c;
+    -fx-text-fill: #ebebeb;
 }
 
 .choice-box:pressed, .choice-box:pressed:hover{
-    -fx-background-color: #fefefe;
+    -fx-background-color: #3c3f41;
     -fx-border-color: #eea11e;
     -fx-border-radius: 3;
     -fx-border-width: 2;
-    -fx-text-fill: #2c2c2c;
+    -fx-text-fill: #ebebeb;
     -fx-effect: dropshadow(three-pass-box, #eea11e, 2, 0, 0, 0);
 }
 
 // Background color of the whole context menu
 .choice-box .context-menu {
-    -fx-background-color: #fefefe;
+    -fx-background-color: #3c3f41;
 }
 
 // Focused item background color in the list
@@ -197,30 +201,30 @@
 
 }
 .choice-box .context-menu .menu-item:focused .label {
-    -fx-text-fill: #2c2c2c;
+    -fx-text-fill: #ebebeb;
 }
 
 /* -======================== TAB PANE =========================- */
 .tab-pane .tab SVGPath{
-    -fx-fill: #2c2c2c;
+    -fx-fill: #ebebeb;
 }
 .tab-pane .tab:selected SVGPath, .tab-pane .tab:selected:hover SVGPath{
-    -fx-fill: #141414;
+    -fx-fill: #ebebeb;
 }
 .tab-pane .tab:hover SVGPath{
-    -fx-fill: #2b2b2b;
+    -fx-fill: #d0d0d0;
 }
 .tab-pane .tab{
-    -fx-background-color: #fefefe;
+    -fx-background-color: #3c3f41; /* #2b2b2b; */
     -fx-focus-color: transparent;
     -fx-faint-focus-color: transparent;
     -fx-border-radius: 0 0 0 0;
     -fx-border-width: 0 0 3 0;
-    -fx-border-color: #fefefe;
+    -fx-border-color: #2b2b2b;
 }
 
 .tab-pane .tab:selected{
-    -fx-background-color: #fefefe;
+    -fx-background-color: #3c3f41;/*#2b2b2b; */
     -fx-focus-color: transparent;
     -fx-faint-focus-color: transparent;
     -fx-border-radius: 0 0 0 0;
@@ -235,19 +239,27 @@
 
 .tab-pane > .tab-header-area > .tab-header-background
 {
-   -fx-background-color: #ebebeb;
+   -fx-background-color: #2b2b2b;
 
 }
 .tab-pane > .tab-header-area > .headers-region > .tab {
     -fx-padding: 10;
 }
 /* -========================== Context menu =====================- */
+.menu-button .label {
+  -fx-text-fill: #ebebeb;
+}
+
+.menu-button .arrow {
+    -fx-background-color: #ebebeb;
+}
+
 .context-menu {
-  -fx-background-color: #fefefe;
+  -fx-background-color: #3c3f41;
   -fx-cursor: hand;
 }
 .context-menu .menu-item .label {
-  -fx-text-fill: #2c2c2c;
+  -fx-text-fill: #ebebeb;
 }
 .context-menu .menu-item:focused .label {
   -fx-text-fill: white;
@@ -257,7 +269,7 @@
     -fx-border-color: #289de8;
     -fx-border-width: 0 0 1 0;
     -fx-background-color: transparent;
-    -fx-text-fill: #2c2c2c;
+    -fx-text-fill: #ebebeb;
 }
 .text-field:focused {
     -fx-border-color: #e82382;
@@ -267,21 +279,20 @@
 }
 /* -========================== footer pane =====================-  */
 .footer{
-    -fx-background-color: #ffffff;
-    -fx-border-color: #b5b5b5;
+    -fx-background-color: #3c3f41;
+    -fx-border-color: #ebebeb;
     -fx-border-width: 1 0 0 0;
 }
 /* -========================== header pane =====================-  */
 .header {
-   -fx-background-image: url("pttrn.png");
+   -fx-background-image: url("pttrn_drk.png");
    -fx-background-position: center;
    -fx-background-repeat: repeat;
    -fx-border-color: #b5b5b5;
    -fx-border-width: 0 0 1 0;
 }
-
 .header-box {
-    -fx-background-color: #ebebeb;
+    -fx-background-color: #3c3f41;
     -fx-background-insets: 0 0 0 0, 0, 1, 2;
     -fx-background-radius: 2;
     -fx-padding: 3.5;

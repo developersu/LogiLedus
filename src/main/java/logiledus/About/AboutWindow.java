@@ -5,6 +5,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
+import logiledus.Mediator;
 
 import java.io.IOException;
 import java.util.Locale;
@@ -35,8 +36,9 @@ public class AboutWindow {
                     new Image(getClass().getResourceAsStream("/ico/appIcon_64.png")),
                     new Image(getClass().getResourceAsStream("/ico/appIcon_128.png"))
             );
-            stageAbout.setScene(new Scene(parentAbout, 500, 500));
-
+            Scene scene = new Scene(parentAbout, 500, 500);
+            scene.getStylesheets().add(Mediator.getInstance().getPreferences().getTheme());
+            stageAbout.setScene(scene);
             stageAbout.show();
 
         } catch (IOException ignored){}

@@ -14,12 +14,6 @@ public class AppPreferences {
     public void setUseTray(boolean value){ preferences.putBoolean("USE_TRAY", value); }
     public boolean getUseTray(){ return preferences.getBoolean("USE_TRAY", true); }
 
-/*
-    public void setPath(String path){
-        preferences.put("PATH", path);
-    }
-    public String getPath(){
-        return preferences.get("PATH", "/");
-    }
-*/
+    public void setTheme(String value){ preferences.put("THEME", value); }
+    public String getTheme(){ return preferences.get("THEME", "/light.css"); }
 }

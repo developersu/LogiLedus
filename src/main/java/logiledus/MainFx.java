@@ -16,7 +16,7 @@ import java.util.Locale;
 import java.util.ResourceBundle;
 
 public class MainFx extends Application {
-    public static final String appVersion = "v1.0";
+    public static final String appVersion = "v1.1";
 
     private static boolean traySupport = true;
 
@@ -38,9 +38,6 @@ public class MainFx extends Application {
             SwingUtilities.invokeLater(this::addAppToTray);
         }
         //--------------------------------------------------------
-        Mediator.getInstance().setHostServices(getHostServices());
-        Mediator.getInstance().setPreferences(appPreferences);
-
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/Main.fxml"));
 
         Locale locale = new Locale(Locale.getDefault().getISO3Language());
@@ -78,7 +75,12 @@ public class MainFx extends Application {
         primaryStage.setMinWidth(1215);
         primaryStage.setMinHeight(550);
         Scene mainScene = new Scene(root, 1215, 525);
-        mainScene.getStylesheets().add("/light.css");
+        mainScene.getStylesheets().add(appPreferences.getTheme());
+
+        Mediator.getInstance().setHostServices(getHostServices());
+        Mediator.getInstance().setPreferences(appPreferences);
+        Mediator.getInstance().setScene(mainScene);
+
         primaryStage.setScene(mainScene);
         primaryStage.show();
 

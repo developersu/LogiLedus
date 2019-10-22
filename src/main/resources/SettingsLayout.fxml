@@ -17,9 +17,10 @@
       </ButtonBar>
    </bottom>
    <center>
-      <VBox BorderPane.alignment="CENTER">
+      <VBox spacing="5.0" BorderPane.alignment="CENTER">
          <children>
             <CheckBox fx:id="trayCB" mnemonicParsing="false" text="%setting_tray_support" />
+            <CheckBox fx:id="drkThemeCB" mnemonicParsing="false" text="%setting_use_dark_theme" />
          </children>
       </VBox>
    </center>

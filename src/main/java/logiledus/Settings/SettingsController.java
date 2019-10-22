@@ -16,16 +16,26 @@ public class SettingsController implements Initializable {
     private Button cancelBtn, okBtn;
 
     @FXML
-    private CheckBox trayCB;
+    private CheckBox trayCB, drkThemeCB;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         trayCB.setSelected(Mediator.getInstance().getPreferences().getUseTray());
+        if (Mediator.getInstance().getPreferences().getTheme().equals("/dark.css"))
+            drkThemeCB.setSelected(true);
 
         cancelBtn.setOnAction(actionEvent -> ((Stage) cancelBtn.getScene().getWindow()).close());
 
         okBtn.setOnAction(actionEvent -> {
             Mediator.getInstance().getPreferences().setUseTray(trayCB.isSelected());
+            if (drkThemeCB.isSelected()) {
+                Mediator.getInstance().getPreferences().setTheme("/dark.css");
+                Mediator.getInstance().setTheme("/dark.css");
+            }
+            else {
+                Mediator.getInstance().getPreferences().setTheme("/light.css");
+                Mediator.getInstance().setTheme("/light.css");
+            }
             ((Stage) cancelBtn.getScene().getWindow()).close();
         });
 
