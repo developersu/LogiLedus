@@ -26,7 +26,8 @@ public class AboutController implements Initializable {
     private Hyperlink iconsMaterialHLink,
             usb4JavaHLink,
             gitHubHLink,
-            blogspotHLink;
+            blogspotHLink,
+            jacksonHLink;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -46,12 +47,17 @@ public class AboutController implements Initializable {
         });
         gitHubHLink.setOnAction(ActionEvent-> {
             try {
-                hs.showDocument("https://github.com/developersu/LogiLed");
+                hs.showDocument("https://github.com/developersu/LogiLedus");
             } catch (Exception ignored){}   // No luck for linux =(
         });
         blogspotHLink.setOnAction(ActionEvent-> {
             try {
                 hs.showDocument("https://developersu.blogspot.com/");
+            } catch (Exception ignored){}   // No luck for linux =(
+        });
+        jacksonHLink.setOnAction(ActionEvent-> {
+            try {
+                hs.showDocument("https://github.com/FasterXML/jackson");
             } catch (Exception ignored){}   // No luck for linux =(
         });
     }
