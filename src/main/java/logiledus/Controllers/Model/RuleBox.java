@@ -2,6 +2,7 @@ package logiledus.Controllers.Model;
 
 import javafx.geometry.Insets;
 import javafx.geometry.Orientation;
+import javafx.geometry.Pos;
 import javafx.scene.Node;
 import javafx.scene.control.*;
 import javafx.scene.layout.FlowPane;
@@ -69,6 +70,7 @@ public class RuleBox extends HBox {   // todo: add class to selected toggle user
      * */
     public RuleBox(){
         super();
+        this.setAlignment(Pos.CENTER_LEFT);
         Insets insets = new Insets(3.0, 3.0, 3.0, 3.0);
         // Radio button for selecting rule
         radBtn = new RadioButton();
