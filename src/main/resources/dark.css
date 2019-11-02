@@ -216,24 +216,38 @@
 .tab-pane .tab:hover SVGPath{
     -fx-fill: #d0d0d0;
 }
+/*
 .tab-pane .tab{
-    -fx-background-color: #3c3f41; /* #2b2b2b; */
+    -fx-background-color: #3c3f41;
     -fx-focus-color: transparent;
     -fx-faint-focus-color: transparent;
     -fx-border-radius: 0 0 0 0;
     -fx-border-width: 0 0 3 0;
     -fx-border-color: #2b2b2b;
 }
-
 .tab-pane .tab:selected{
-    -fx-background-color: #3c3f41;/*#2b2b2b; */
+
+    -fx-background-color: #3c3f41;
     -fx-focus-color: transparent;
     -fx-faint-focus-color: transparent;
     -fx-border-radius: 0 0 0 0;
     -fx-border-width: 0 0 3 0;
-    -fx-border-color: #40b9bb; /* #289de8; */
+    -fx-border-color: #40b9bb;
 }
+*/
 
+.tab-pane .tab{
+    -fx-background-color: #3c3f41;
+    -fx-background-radius: 2;
+    -fx-focus-color: transparent;
+    -fx-faint-focus-color: transparent;
+}
+.tab-pane .tab:selected{
+    -fx-background-color: #40b9bb;
+    -fx-background-radius: 2;
+    -fx-focus-color: transparent;
+    -fx-faint-focus-color: transparent;
+}
 .tab-pane > .tab-header-area {
     -fx-background-insets: 0.0;
     -fx-padding: 5 5 5 5;

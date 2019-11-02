@@ -2,6 +2,7 @@ package logiledus.USB;
 
 import javafx.concurrent.Task;
 import logiledus.MessagesConsumer;
+import logiledus.RainbowHexDump;
 import org.usb4java.DeviceHandle;
 import org.usb4java.LibUsb;
 
@@ -37,11 +38,12 @@ abstract class LoThread extends Task<Void> {
         IntBuffer readBufTrans = IntBuffer.allocate(1);
         LibUsb.interruptTransfer(handler, (byte) 0x82, readBuffer, readBufTrans, 1000);
         /*
+        readBufTrans.rewind();
         readBuffer.rewind();
-        byte[] arr = new byte[readBuffer.get()];
+        byte[] arr = new byte[readBufTrans.get()];
         readBuffer.get(arr);
         RainbowHexDump.hexDumpUTF8(arr);
-        */
+        //*/
         return false;
     }
 }

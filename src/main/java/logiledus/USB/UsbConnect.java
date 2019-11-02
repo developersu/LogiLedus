@@ -10,7 +10,7 @@ public class UsbConnect {
     private DeviceHandle handlerKbrd;
 
     private boolean connected = false;
-    
+
     public UsbConnect(){
         MessagesConsumer mc = MessagesConsumer.getInstance();
 
@@ -67,17 +67,8 @@ public class UsbConnect {
 
         LibUsb.freeDeviceList(deviceList, true);
 
-        // Check if this device uses kernel driver and detach if possible:
-        result = LibUsb.kernelDriverActive(handlerKbrd, DEFAULT_INTERFACE);
-        if (result == 1) {      // used by kernel
-            if (LibUsb.detachKernelDriver(handlerKbrd, DEFAULT_INTERFACE) != LibUsb.SUCCESS) {
-                mc.inform("Detach kernel failed: " + UsbErrorCodes.getErrCode(result));
-                close();
-                return;
-            }
-        }
-        else if (result != LibUsb.SUCCESS)
-            mc.inform("Can't proceed with libusb driver : "+UsbErrorCodes.getErrCode(result));
+        // I don't really care what is resulting value for this
+        LibUsb.setAutoDetachKernelDriver(handlerKbrd, true);
 
         // Claim interface
         result = LibUsb.claimInterface(handlerKbrd, DEFAULT_INTERFACE);

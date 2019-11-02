@@ -9,6 +9,11 @@ public class EffectsThread extends LoThread {
 
     private byte[] command;
 
+    private byte[] commit = {
+            0x11, (byte) 0xff, 0x03, 0x1c, 0x00, 0x00, 0x00, 0x00,    0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+            0x00,        0x00, 0x00, 0x00
+    };
+
     /**
      * Used to set effects
      * @param effectData : set of rules, always not empty and not null
@@ -61,8 +66,10 @@ public class EffectsThread extends LoThread {
 
         handler = usbConnect.getHandlerKbrd();
 
-        if (! write(command))
-            MessagesConsumer.getInstance().inform("Complete!");
+        if (! write(command)){
+            if (! write(commit))
+                MessagesConsumer.getInstance().inform("Complete!");
+        }
 
         usbConnect.close();
         return null;
