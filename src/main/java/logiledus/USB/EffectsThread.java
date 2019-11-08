@@ -9,7 +9,7 @@ public class EffectsThread extends LoThread {
 
     private byte[] command;
 
-    private byte[] commit = {
+    private static final byte[] commit = {
             0x11, (byte) 0xff, 0x03, 0x1c, 0x00, 0x00, 0x00, 0x00,    0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
             0x00,        0x00, 0x00, 0x00
     };
@@ -55,7 +55,7 @@ public class EffectsThread extends LoThread {
         }
     }
     @Override
-    protected Void call() throws Exception {
+    protected Void call() {
         if (command == null)
             return null;
 

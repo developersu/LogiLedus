@@ -16,7 +16,7 @@ import java.util.Locale;
 import java.util.ResourceBundle;
 
 public class MainFx extends Application {
-    public static final String appVersion = "v1.3";
+    public static final String appVersion = "v1.2";
 
     private static boolean traySupport = true;
 
