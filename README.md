@@ -1,6 +1,6 @@
 # LogiLedus
 
-![License](https://img.shields.io/badge/License-GPLv3-blue.svg) [![Releases](https://img.shields.io/github/downloads/developersu/LogiLedus/total.svg)]() [![LatestVer](https://img.shields.io/github/release/developersu/LogiLedus.svg)]()
+![License](https://img.shields.io/badge/License-GPLv3-blue.svg) ![Releases](https://img.shields.io/github/downloads/developersu/LogiLedus/total.svg) ![LatestVer](https://img.shields.io/github/release/developersu/LogiLedus.svg)
 
 [Support author](#support-this-app)
 
