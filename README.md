@@ -31,7 +31,7 @@ JRE/JDK 8u60 or higher.
 
 2. `root # java -jar /path/to/application.jar`
 
-3. Optional. Add user to 'udev' rules to use NS not-from-root-account
+3. Optional: Add user to 'udev' rules. Required to use application not only from root account.
 ```
 root # vim /etc/udev/rules.d/99-G513.rules
 SUBSYSTEM=="usb", ATTRS{idVendor}=="046D", ATTRS{idProduct}=="c33c", GROUP="plugdev"
@@ -59,13 +59,7 @@ Want to support development? Make a donation* (see below):
 
 #### TODO
 
-* [x] Tray support
-    * [ ] tray icon size checks
-* [x] Configuration files support
-* [x] Settings
-    * [x] Tray icon settings
-    * [ ] Autoload
+* [ ] Tray support: tray icon size checks
+* [ ] Autoload option in settings
 * [ ] Headless mode (CLI)
-* [x] Fix UI
-    * [ ] Add opened file name to info pane
-* [ ] Dark theme 
+* [ ] Add opened file name to info pane 
