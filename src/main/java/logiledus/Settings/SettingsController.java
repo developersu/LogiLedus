@@ -5,6 +5,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.stage.Stage;
+import logiledus.AppPreferences;
 import logiledus.Mediator;
 
 import java.net.URL;
@@ -16,24 +17,27 @@ public class SettingsController implements Initializable {
     private Button cancelBtn, okBtn;
 
     @FXML
-    private CheckBox trayCB, drkThemeCB;
+    private CheckBox trayCB, drkThemeCB, openRecentCB;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        trayCB.setSelected(Mediator.getInstance().getPreferences().getUseTray());
-        if (Mediator.getInstance().getPreferences().getTheme().equals("/dark.css"))
-            drkThemeCB.setSelected(true);
+        AppPreferences preferences = Mediator.getInstance().getPreferences();
+
+        trayCB.setSelected(preferences.getUseTray());
+        openRecentCB.setSelected(preferences.getOpenRecentPlaylistOnStart());
+        drkThemeCB.setSelected(preferences.getTheme().equals("/dark.css"));
 
         cancelBtn.setOnAction(actionEvent -> ((Stage) cancelBtn.getScene().getWindow()).close());
 
         okBtn.setOnAction(actionEvent -> {
-            Mediator.getInstance().getPreferences().setUseTray(trayCB.isSelected());
+            preferences.setUseTray(trayCB.isSelected());
+            preferences.setOpenRecentPlaylistOnStart(openRecentCB.isSelected());
             if (drkThemeCB.isSelected()) {
-                Mediator.getInstance().getPreferences().setTheme("/dark.css");
+                preferences.setTheme("/dark.css");
                 Mediator.getInstance().setTheme("/dark.css");
             }
             else {
-                Mediator.getInstance().getPreferences().setTheme("/light.css");
+                preferences.setTheme("/light.css");
                 Mediator.getInstance().setTheme("/light.css");
             }
             ((Stage) cancelBtn.getScene().getWindow()).close();

@@ -7,6 +7,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
+import logiledus.Controllers.MainController;
 
 import javax.imageio.ImageIO;
 import javax.swing.*;
@@ -16,7 +17,7 @@ import java.util.Locale;
 import java.util.ResourceBundle;
 
 public class MainFx extends Application {
-    public static final String appVersion = "v1.3";
+    public static final String appVersion = "v1.4";
 
     private static boolean traySupport = true;
 
@@ -28,6 +29,9 @@ public class MainFx extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception{
+        //if (! getParameters().getUnnamed().isEmpty())
+        //    System.out.println(getParameters().getUnnamed().get(0));
+
         AppPreferences appPreferences = new AppPreferences();
         if (traySupport)                                                // By default it's enabled, but in case it disabled from CLI, don't touch.
             traySupport = appPreferences.getUseTray();        // Otherwise, check against preferences
@@ -84,7 +88,11 @@ public class MainFx extends Application {
         primaryStage.setScene(mainScene);
         primaryStage.show();
 
-        primaryStage.setOnHidden(e->MessagesConsumer.getInstance().stop()); // Useless?
+        MainController controller = loader.getController();
+        primaryStage.setOnHidden(e->{
+            MessagesConsumer.getInstance().stop();
+            controller.exit();
+        }); // Useless?
     }
 
     private void addAppToTray(){
@@ -144,19 +152,22 @@ public class MainFx extends Application {
     }
 
     public static void main(String[] args) {
-        if ((args.length > 0)) {
-            if (args[0].equals("--no-tray")){
-                traySupport = false;
-                launch(args);
+        if ((args.length > 0) && args[0].startsWith("-")){
+            switch (args[0]){
+                case "--no-tray":
+                    traySupport = false;
+                    launch(args);
+                    return;
+                case "-v":
+                case "--version":
+                    System.out.println("LogiLedus " + appVersion);
+                    return;
             }
-            if (args[0].equals("-v") || args[0].equals("--version"))
-                System.out.println("LogiLedus " + appVersion);
-            else
-                System.out.println("Usage: LogiLedus [KEY]\n" +
-                        "  -v,  --version\tGet application version\n" +
-                        "       --no-tray\tDisable tray support");
+            System.out.println("Usage: LogiLedus [KEY]\n" +
+                    "  -v,  --version\tGet application version\n" +
+                    "       --no-tray\tDisable tray support");
+            return;
         }
-        else
-            launch(args);
+        launch(args);
     }
 }

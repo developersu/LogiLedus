@@ -21,6 +21,7 @@
          <children>
             <CheckBox fx:id="trayCB" mnemonicParsing="false" text="%setting_tray_support" />
             <CheckBox fx:id="drkThemeCB" mnemonicParsing="false" text="%setting_use_dark_theme" />
+            <CheckBox fx:id="openRecentCB" mnemonicParsing="false" text="%setting_open_recent_on_start" />
          </children>
       </VBox>
    </center>

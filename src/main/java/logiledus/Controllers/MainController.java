@@ -7,10 +7,9 @@ import javafx.scene.control.*;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.stage.FileChooser;
+import logiledus.*;
 import logiledus.About.AboutWindow;
-import logiledus.MessagesConsumer;
 import logiledus.Config.SettingsFileFormat;
-import logiledus.ServiceWindow;
 import logiledus.Settings.SettingsWindow;
 import logiledus.USB.EffectsThread;
 import logiledus.USB.GameModeThread;
@@ -25,10 +24,8 @@ import java.util.ResourceBundle;
 public class MainController implements Initializable {
     @FXML
     private KeysLedsController KeysLedsController;
-
     @FXML
     private EffectsController EffectsController;
-
     @FXML
     private GameModeController GameModeController;
 
@@ -52,13 +49,20 @@ public class MainController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         this.rb = resourceBundle;
+        AppPreferences preferences = new AppPreferences();
+
+        if (preferences.getOpenRecentPlaylistOnStart()){
+            String recentConfigFileAbsPath = FilesValidator.validate(preferences.getRecent());
+            if (! recentConfigFileAbsPath.isEmpty())
+                openConfig(new File(recentConfigFileAbsPath));
+        }
 
         aboutBtn.setOnAction(actionEvent -> new AboutWindow());
         settingsBtn.setOnAction(actionEvent -> new SettingsWindow());
         MessagesConsumer.getInstance().setInstance(infoLbl);
         MessagesConsumer.getInstance().start();
 
-        openBtn.setOnAction(actionEvent -> openConfig());
+        openBtn.setOnAction(actionEvent -> openConfigButtonAction());
 
         saveBtn.setOnAction(ActionEvent -> saveConfig(false));
         saveAsBtn.setOnAction(ActionEvent -> saveConfig(true));
@@ -97,12 +101,15 @@ public class MainController implements Initializable {
     /**
      * For 'Open' button
      * */
-    private void openConfig(){
+    private void openConfigButtonAction(){
         File configFile = getOpenFileChooser();
         if (configFile == null)
             return;
         else
             recentPath = configFile.getParentFile().getAbsolutePath();
+        openConfig(configFile);
+    }
+    private void openConfig(File configFile){
         ObjectMapper mapper = new ObjectMapper();
         SettingsFileFormat setup;
         try{
@@ -113,6 +120,7 @@ public class MainController implements Initializable {
             GameModeController.setConfig(setup.getGameModeKeyCodes());
 
             openedConfigFile = configFile;
+            infoLbl.setText(configFile.getAbsolutePath());
         }
         catch (IOException e){
             ServiceWindow.getErrorNotification(rb.getString("error_any_title"), rb.getString("error_any_body"));
@@ -216,7 +224,7 @@ public class MainController implements Initializable {
         FileChooser fileChooser = new FileChooser();
         fileChooser.setTitle(rb.getString("btn_save_as"));
         fileChooser.setInitialFileName("keyboard settings.lcfg");
-        fileChooser.getExtensionFilters().add(new FileChooser.ExtensionFilter("LogiLed config (*.lcfg)", "*.lcfg"));
+        fileChooser.getExtensionFilters().add(new FileChooser.ExtensionFilter("LogiLedus config (*.lcfg)", "*.lcfg"));
 
         if (recentPath != null){
             File stat = new File(recentPath);
@@ -225,5 +233,13 @@ public class MainController implements Initializable {
         }
 
         return fileChooser.showSaveDialog(applyBtn.getScene().getWindow());
+    }
+
+    public void exit(){
+        AppPreferences preferences = new AppPreferences();
+        if (openedConfigFile == null)
+            preferences.setRecent("");
+        else
+            preferences.setRecent(openedConfigFile.getAbsolutePath());
     }
 }

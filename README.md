@@ -6,9 +6,9 @@
 
 LogiLedus is a Logitech G513 Carbon GUI driver for adjusting backlight and effects.
 
-![Screenshot 1](https://live.staticflickr.com/65535/48932060697_6f60cc4143_o.png)
-![Screenshot 2](https://live.staticflickr.com/65535/48931873171_b00c4fd875_o.png)
-![Screenshot 3](https://live.staticflickr.com/65535/48931332563_72de8e93ed_o.png)
+![Screenshot 1](screenshots/1.png)
+![Screenshot 2](screenshots/2.png)
+![Screenshot 3](screenshots/3.png)
 
 #### License
 
@@ -52,7 +52,7 @@ Want to support development? Make a donation* (see below):
 
 <a href="https://paypal.me/developersu" title="PayPal"><img src="https://www.paypalobjects.com/webstatic/mktg/Logo/pp-logo-100px.png" border="0" alt="PayPal Logo" /></a>
 
-[Yandex.Money](https://money.yandex.ru/to/410014301951665)
+[ЮMoney](https://yoomoney.ru/to/410014301951665)
 
 *Please note: this is non-commercial application.
 
@@ -61,4 +61,4 @@ Want to support development? Make a donation* (see below):
 * [ ] Tray support: tray icon size checks
 * [ ] Autoload option in settings
 * [ ] Headless mode (CLI)
-* [ ] Add opened file name to info pane 
+* [x] Add opened file name to info pane 
