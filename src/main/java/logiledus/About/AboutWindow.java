@@ -9,6 +9,7 @@ import logiledus.Mediator;
 
 import java.io.IOException;
 import java.util.Locale;
+import java.util.Objects;
 import java.util.ResourceBundle;
 
 public class AboutWindow {
@@ -31,10 +32,10 @@ public class AboutWindow {
 
             stageAbout.setTitle(resourceBundle.getString("menu_item_about"));
             stageAbout.getIcons().addAll(
-                    new Image(getClass().getResourceAsStream("/ico/appIcon_32.png")),
-                    new Image(getClass().getResourceAsStream("/ico/appIcon_48.png")),
-                    new Image(getClass().getResourceAsStream("/ico/appIcon_64.png")),
-                    new Image(getClass().getResourceAsStream("/ico/appIcon_128.png"))
+                    new Image(Objects.requireNonNull(getClass().getResourceAsStream("/ico/appIcon_32.png"))),
+                    new Image(Objects.requireNonNull(getClass().getResourceAsStream("/ico/appIcon_48.png"))),
+                    new Image(Objects.requireNonNull(getClass().getResourceAsStream("/ico/appIcon_64.png"))),
+                    new Image(Objects.requireNonNull(getClass().getResourceAsStream("/ico/appIcon_128.png")))
             );
             Scene scene = new Scene(parentAbout, 500, 500);
             scene.getStylesheets().add(Mediator.getInstance().getPreferences().getTheme());

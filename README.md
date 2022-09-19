@@ -42,19 +42,19 @@ SUBSYSTEM=="usb", ATTRS{idVendor}=="046D", ATTRS{idProduct}=="c33c", GROUP="plug
 root # udevadm control --reload-rules && udevadm trigger
 ```
 
-### Building
+### Build
 
 `$ mvn package`
+
+#### Thanks
+
+* [DDinghoya](https://github.com/DDinghoya), who translated this application to Korean!
 
 ## Support this app
 
 If you like this app, just give a star. 
 
 Want to support development? Make a donation* (see below):
-
-<a href="https://liberapay.com/developersu/donate"><img alt="Donate using Liberapay" src="https://liberapay.com/assets/widgets/donate.svg"></a>
-
-<a href="https://paypal.me/developersu" title="PayPal"><img src="https://www.paypalobjects.com/webstatic/mktg/Logo/pp-logo-100px.png" border="0" alt="PayPal Logo" /></a>
 
 [ЮMoney](https://yoomoney.ru/to/410014301951665)
 
@@ -63,6 +63,5 @@ Want to support development? Make a donation* (see below):
 #### TODO
 
 * [ ] Tray support: tray icon size checks
-* [ ] Autoload option in settings
 * [ ] Headless mode (CLI)
 * [x] Add opened file name to info pane 

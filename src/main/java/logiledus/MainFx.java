@@ -14,10 +14,11 @@ import javax.swing.*;
 import java.awt.*;
 import java.io.IOException;
 import java.util.Locale;
+import java.util.Objects;
 import java.util.ResourceBundle;
 
 public class MainFx extends Application {
-    public static final String appVersion = "v1.4";
+    public static final String appVersion = ResourceBundle.getBundle("app").getString("_version");;
 
     private static boolean traySupport = true;
 
@@ -29,12 +30,9 @@ public class MainFx extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception{
-        //if (! getParameters().getUnnamed().isEmpty())
-        //    System.out.println(getParameters().getUnnamed().get(0));
-
         AppPreferences appPreferences = new AppPreferences();
-        if (traySupport)                                                // By default it's enabled, but in case it disabled from CLI, don't touch.
-            traySupport = appPreferences.getUseTray();        // Otherwise, check against preferences
+        if (traySupport)                                // By default, it's enabled, but in case it disabled from CLI, don't touch.
+            traySupport = appPreferences.getUseTray();  // Otherwise, check against preferences
         //-----------------------Tray support---------------------
         this.stage = primaryStage;
         if (traySupport){
@@ -54,10 +52,10 @@ public class MainFx extends Application {
         Parent root = loader.load();
 
         primaryStage.getIcons().addAll(
-                new Image(getClass().getResourceAsStream("/ico/appIcon_32.png")),
-                new Image(getClass().getResourceAsStream("/ico/appIcon_48.png")),
-                new Image(getClass().getResourceAsStream("/ico/appIcon_64.png")),
-                new Image(getClass().getResourceAsStream("/ico/appIcon_128.png"))
+                new Image(Objects.requireNonNull(getClass().getResourceAsStream("/ico/appIcon_32.png"))),
+                new Image(Objects.requireNonNull(getClass().getResourceAsStream("/ico/appIcon_48.png"))),
+                new Image(Objects.requireNonNull(getClass().getResourceAsStream("/ico/appIcon_64.png"))),
+                new Image(Objects.requireNonNull(getClass().getResourceAsStream("/ico/appIcon_128.png")))
         );
         // NOTE: tray leftovers
         if (traySupport) {
@@ -106,7 +104,7 @@ public class MainFx extends Application {
 
             tray = SystemTray.getSystemTray();
 
-            trayIcon = new TrayIcon(ImageIO.read(getClass().getResourceAsStream("/ico/appIcon_24.png")));
+            trayIcon = new TrayIcon(ImageIO.read(Objects.requireNonNull(getClass().getResourceAsStream("/ico/appIcon_24.png"))));
 
             trayIcon.addActionListener(ActionEvent -> Platform.runLater(this::showStage));
 

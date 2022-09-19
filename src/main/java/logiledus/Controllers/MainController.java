@@ -17,6 +17,7 @@ import logiledus.USB.KeyLedThread;
 
 import java.io.*;
 import java.net.URL;
+import java.nio.file.Files;
 import java.util.HashMap;
 import java.util.List;
 import java.util.ResourceBundle;
@@ -113,7 +114,7 @@ public class MainController implements Initializable {
         ObjectMapper mapper = new ObjectMapper();
         SettingsFileFormat setup;
         try{
-            setup = mapper.readerFor(SettingsFileFormat.class).readValue(new FileInputStream(configFile));
+            setup = mapper.readerFor(SettingsFileFormat.class).readValue(Files.newInputStream(configFile.toPath()));
 
             KeysLedsController.setConfig(setup.getKeyLedRule());
             EffectsController.setConfig(setup.getEffectHumanReadable());
