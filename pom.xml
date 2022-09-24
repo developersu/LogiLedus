@@ -6,7 +6,7 @@
 
     <groupId>loper</groupId>
     <artifactId>LogiLedus</artifactId>
-    <version>1.5-SNAPSHOT</version>
+    <version>1.5</version>
 
     <!-- <url></url> -->
     <description>
