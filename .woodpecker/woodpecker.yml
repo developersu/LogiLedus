@@ -1,0 +1,20 @@
+steps:
+  - name: test
+    when:
+      event: [tag, push]
+    image: maven:3-jdk-11
+    commands:
+      - mvn -B -DskipTests clean package
+      - mvn test -B
+    volumes:
+      - /home/docker/woodpecker/files/m2:/root/.m2
+
+  - name: archive-artifact
+    when:
+      event: [tag, push]
+    image: alpine:latest
+    commands:
+      - mkdir -p /builds/logiledus
+      - cp target/LogiLedus-*jar /builds/logiledus/
+    volumes:
+      - /home/www/builds:/builds

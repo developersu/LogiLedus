@@ -1,6 +1,6 @@
 # LogiLedus
 
-![License](https://img.shields.io/badge/License-GPLv3-blue.svg) ![Releases](https://img.shields.io/github/downloads/developersu/LogiLedus/total.svg) ![LatestVer](https://img.shields.io/github/release/developersu/LogiLedus.svg) [![Build Status](https://ci.redrise.ru/api/badges/desu/logiledus/status.svg)](https://ci.redrise.ru/desu/logiledus)
+![License](https://img.shields.io/badge/License-GPLv3-blue.svg) ![Releases](https://img.shields.io/github/downloads/developersu/LogiLedus/total.svg) ![LatestVer](https://img.shields.io/github/release/developersu/LogiLedus.svg) [![status-badge](https://ci.redrise.ru/api/badges/4/status.svg)](https://ci.redrise.ru/repos/4)
 
 GitHub mirror. [Click here to get it from independent source code location](https://git.redrise.ru/desu/logiledus)
 
