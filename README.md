@@ -31,7 +31,7 @@ JRE/JDK 8u60 or higher.
 
 ### Usage in Linux
 
-1. Install JRE/JDK 8u60 or higher (openJDK is good. Oracle's one is also good). JavaFX not needed (it's embedded).
+1. Install JRE/JDK 8u60 or higher (E.g. OpenJDK). JavaFX not needed since it's embedded.
 
 2. `root # java -jar /path/to/application.jar`
 
@@ -56,7 +56,7 @@ If you like this app, just give a star.
 
 Want to support development? Make a donation* (see below):
 
-[ЮMoney](https://yoomoney.ru/to/410014301951665)
+[Boosty](https://boosty.to/developersu)
 
 *Please note: this is non-commercial application.
 
